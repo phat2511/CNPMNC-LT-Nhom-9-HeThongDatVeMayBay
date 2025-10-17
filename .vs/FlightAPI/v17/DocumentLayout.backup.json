@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.data\\entities\\airclouddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\entities\\airclouddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.data\\flightapi.data.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\flightapi.data.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
+              "RelativeDocumentMoniker": "FlightAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
+              "RelativeToolTip": "FlightAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:38:15.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AirCloudDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
+              "RelativeToolTip": "FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAIA5wD0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:35:02.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FlightAPI.Data",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeToolTip": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:31:56.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlightAPI.Data.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeToolTip": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:17:18.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FlightAPI.Services.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\FlightAPI.Services.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
+              "RelativeToolTip": "FlightAPI.Services\\FlightAPI.Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:17:08.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FlightAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
+              "RelativeDocumentMoniker": "FlightAPI\\FlightAPI.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
+              "RelativeToolTip": "FlightAPI\\FlightAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:16:53.935Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

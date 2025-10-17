@@ -1,0 +1,14 @@
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\bin\Debug\net8.0\FlightAPI.Data.deps.json
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\bin\Debug\net8.0\FlightAPI.Data.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\bin\Debug\net8.0\FlightAPI.Data.pdb
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.csproj.AssemblyReference.cache
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.AssemblyInfoInputs.cache
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.AssemblyInfo.cs
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.csproj.CoreCompileInputs.cache
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\refint\FlightAPI.Data.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.pdb
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\ref\FlightAPI.Data.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\bin\Debug\net8.0\FlightAPI.Data.runtimeconfig.json
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Data\obj\Debug\net8.0\FlightAPI.Data.genruntimeconfig.cache
