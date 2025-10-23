@@ -5,11 +5,24 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Lấy chuỗi kết nối
-var connectionString = builder.Configuration.GetConnectionString("TodoDbConnection");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Đăng ký dịch vụ DbContext, sử dụng AirCloudDbContext
 builder.Services.AddDbContext<AirCloudDbContext>(options => // <-- Dùng DbContext mới
     options.UseSqlServer(connectionString, b => b.MigrationsAssembly(typeof(AirCloudDbContext).Assembly.FullName)));
+
+// Đăng ký AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+// Đăng ký Service mới (Tầng nghiệp vụ)
+
+builder.Services.AddScoped<FlightAPI.Services.IFlightManagerService, FlightAPI.Services.FlightManagerService>();
+
+builder.Services.AddScoped<IFlightInstanceService, FlightInstanceService>();
+
+builder.Services.AddScoped<IAirportService, AirportService>();
+
+
 
 // Add services to the container.
 

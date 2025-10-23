@@ -13,3 +13,4 @@ C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\Flight
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\refint\FlightAPI.Services.dll
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.pdb
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\ref\FlightAPI.Services.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.sourcelink.json
