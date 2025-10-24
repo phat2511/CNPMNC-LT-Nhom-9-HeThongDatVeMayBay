@@ -22,6 +22,8 @@ builder.Services.AddScoped<IFlightInstanceService, FlightInstanceService>();
 
 builder.Services.AddScoped<IAirportService, AirportService>();
 
+builder.Services.AddScoped<IAirlineService, AirlineService>();
+
 
 
 // Add services to the container.

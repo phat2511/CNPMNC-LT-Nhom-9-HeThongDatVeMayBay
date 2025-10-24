@@ -8,5 +8,7 @@ namespace FlightAPI.Models
         [Required(ErrorMessage = "Số hiệu chuyến bay là bắt buộc.")]
         [StringLength(10, ErrorMessage = "Số hiệu chuyến bay không được quá 10 ký tự.")]
         public string FlightNumber { get; set; }
+
+        public string AirlineCode { get; set; }
     }
 }

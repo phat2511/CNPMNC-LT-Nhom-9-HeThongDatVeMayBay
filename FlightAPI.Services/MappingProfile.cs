@@ -26,6 +26,9 @@ namespace FlightAPI.Services
             // Từ Entity sang DTO Hiển thị
             CreateMap<Flight, FlightManagerServiceDto>();
 
+            CreateMap <AirlineCreateDto, Airline>();
+            CreateMap<Airline, AirlineCreateDto>();
+
             // Mapping phức tạp: Ánh xạ nhiều trường từ các Entity liên quan
             CreateMap<FlightInstance, FlightInstanceReadDto>()
                 .ForMember(dest => dest.AirlineName,
