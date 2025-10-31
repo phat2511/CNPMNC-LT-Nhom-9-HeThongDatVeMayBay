@@ -71,11 +71,12 @@ builder.Services.AddAuthorization();
 
 
 // Đăng ký Service mới (Tầng nghiệp vụ)
-builder.Services.AddScoped<FlightAPI.Services.IFlightManagerService, FlightAPI.Services.FlightManagerService>();
+builder.Services.AddScoped<IFlightManagerService, FlightManagerService>();
 builder.Services.AddScoped<IFlightInstanceService, FlightInstanceService>();
 builder.Services.AddScoped<IAirportService, AirportService>();
 builder.Services.AddScoped<IAirlineService, AirlineService>();
-builder.Services.AddScoped<IAuthService, AuthService>(); // Dòng này OK
+builder.Services.AddScoped<IAuthService, AuthService>(); 
+builder.Services.AddScoped<IBookedService, BookedService>();
 
 
 // Add services to the container.

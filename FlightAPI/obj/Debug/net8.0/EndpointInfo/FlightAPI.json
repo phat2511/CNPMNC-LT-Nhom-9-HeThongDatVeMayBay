@@ -383,6 +383,37 @@
         }
       }
     },
+    "/api/Bookings": {
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FlightInstances": {
       "get": {
         "tags": [
@@ -726,6 +757,31 @@
         },
         "additionalProperties": false
       },
+      "BookingRequestDto": {
+        "required": [
+          "flightInstanceId",
+          "passengers"
+        ],
+        "type": "object",
+        "properties": {
+          "flightInstanceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatClassId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "passengers": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PassengerDto"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
       "FlightInstanceCreateDto": {
         "type": "object",
         "properties": {
@@ -804,6 +860,24 @@
             "type": "string"
           },
           "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PassengerDto": {
+        "required": [
+          "passengerName",
+          "passengerType"
+        ],
+        "type": "object",
+        "properties": {
+          "passengerName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "passengerType": {
             "minLength": 1,
             "type": "string"
           }

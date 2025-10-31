@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[FlightAPI.Models.AirlineCreateDto, FlightAPI.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FlightAPI.Models.AirlineCreateDto, FlightAPI.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -224,6 +224,22 @@
       {
         "Name": "dto",
         "Type": "FlightAPI.Services.Dtos.Auth.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightAPI.Controllers.BookingsController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/Bookings",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FlightAPI.Services.Dtos.Booking.BookingRequestDto",
         "IsRequired": true
       }
     ],
