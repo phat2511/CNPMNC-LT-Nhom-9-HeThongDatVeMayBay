@@ -8,5 +8,7 @@
         public string BookingStatus { get; set; } = "Pending";
         public DateTime CreatedAt { get; set; }
         public string FlightInfo { get; set; } = null!; // Mô tả (VD: "SGN -> HAN")
+
+        public List<BookingFlightIdDto> BookingFlights { get; set; } = new List<BookingFlightIdDto>();
     }
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using FlightAPI.Models; // DTOs
-using FlightAPI.Data.Models; // Giả định các DTO khác cũng ở đây
+﻿using FlightAPI.Data.Models; // Giả định các DTO khác cũng ở đây
+using FlightAPI.Services.Dtos.Seat;
 
 namespace FlightAPI.Services
 {
@@ -14,6 +11,8 @@ namespace FlightAPI.Services
         Task<FlightInstanceReadDto> CreateInstanceAsync(FlightInstanceCreateDto dto);
         Task<bool> UpdateInstanceAsync(int id, FlightInstanceCreateDto dto);
         Task<bool> DeleteInstanceAsync(int id);
+
+        Task<IEnumerable<SeatDto>> GetSeatsForFlightAsync(int flightInstanceId);
 
         // =======================================================
         // ĐÃ SỬA: Thêm '?' để cho phép tham số tùy chọn (nullable)

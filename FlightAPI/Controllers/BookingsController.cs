@@ -1,6 +1,7 @@
 ﻿using FlightAPI.Data.Entities;
 using FlightAPI.Services; // Thêm
 using FlightAPI.Services.Dtos.Booking; // Thêm
+using FlightAPI.Services.Dtos.Payment;
 using Microsoft.AspNetCore.Authorization; // Thêm
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims; // Thêm
@@ -51,6 +52,53 @@ namespace FlightAPI.Controllers
             }
         }
 
+        [HttpPut("select-seat")] // <--- API "CHỌN"
+        public async Task<IActionResult> SelectSeat([FromBody] SelectSeatRequestDto dto)
+        {
+            try
+            {
+                var accountId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                await _bookingService.SelectSeatAsync(dto, accountId);
+
+                return Ok(new { message = "Chọn ghế thành công." });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
         // ... (Chúng ta sẽ thêm API chọn ghế, thêm dịch vụ vào đây sau) ...
+        [HttpPost("{id}/payment")] // <--- API THANH TOÁN
+                                   // (Nó nhận 'id' là 'BookingId' từ đường dẫn)
+        public async Task<IActionResult> ProcessPayment([FromRoute] int id, [FromBody] PaymentRequestDto dto)
+        {
+            try
+            {
+                var accountId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                // Gọi "thợ" vào xử lý (ta sẽ làm "não" ở bước sau)
+                var result = await _bookingService.ProcessPaymentAsync(id, dto, accountId);
+
+                return Ok(result);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message }); // 404 (Không tìm thấy đơn)
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message }); // 400 (Đơn đã trả, đơn hết hạn)
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

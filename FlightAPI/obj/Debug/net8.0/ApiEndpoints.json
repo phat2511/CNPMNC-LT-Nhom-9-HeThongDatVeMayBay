@@ -246,6 +246,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FlightAPI.Controllers.BookingsController",
+    "Method": "SelectSeat",
+    "RelativePath": "api/Bookings/select-seat",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FlightAPI.Services.Dtos.Booking.SelectSeatRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FlightInstancesController",
     "Method": "GetAll",
     "RelativePath": "api/FlightInstances",
@@ -313,6 +329,22 @@
     "Method": "Delete",
     "RelativePath": "api/FlightInstances/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightInstancesController",
+    "Method": "GetSeatMap",
+    "RelativePath": "api/FlightInstances/{id}/seats",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

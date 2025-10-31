@@ -8,9 +8,12 @@ public class FlightInstancesController : ControllerBase
 {
     private readonly IFlightInstanceService _service;
 
-    public FlightInstancesController(IFlightInstanceService service)
+    private readonly IFlightInstanceService _flightInstanceService;
+
+    public FlightInstancesController(IFlightInstanceService service, IFlightInstanceService flightInstanceService)
     {
         _service = service;
+        _flightInstanceService = flightInstanceService;
     }
 
     [HttpGet]
@@ -84,5 +87,16 @@ public class FlightInstancesController : ControllerBase
         }
 
         return NoContent(); // 204 No Content (Xóa thành công)
+    }
+
+    [HttpGet("{id}/seats")] // <--- API "XEM"
+    public async Task<IActionResult> GetSeatMap(int id)
+    {
+        var seats = await _flightInstanceService.GetSeatsForFlightAsync(id);
+        if (seats == null || !seats.Any())
+        {
+            return NotFound("Không tìm thấy chuyến bay hoặc chuyến bay không có ghế.");
+        }
+        return Ok(seats);
     }
 }

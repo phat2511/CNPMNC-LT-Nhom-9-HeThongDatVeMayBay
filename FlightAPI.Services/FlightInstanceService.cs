@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FlightAPI.Data.Entities;
 using FlightAPI.Data.Models;
+using FlightAPI.Services.Dtos.Seat;
 using Microsoft.EntityFrameworkCore;
 
 namespace FlightAPI.Services
@@ -140,6 +141,27 @@ namespace FlightAPI.Services
             _context.FlightInstances.Remove(entityToDelete);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<SeatDto>> GetSeatsForFlightAsync(int flightInstanceId)
+        {
+            var seats = await _context.Seats
+                // 2. Lọc đúng chuyến bay
+                .Where(s => s.FlightInstanceId == flightInstanceId)
+                // 3. "Tham lam": Vớ luôn thông tin của Hạng ghế (SeatClass)
+                .Include(s => s.SeatClass)
+                // 4. "Nhào nặn" (Select) nó thành cái DTO "sạch sẽ"
+                .Select(s => new SeatDto
+                {
+                    SeatId = s.SeatId,
+                    SeatNumber = s.SeatNumber,
+                    IsAvailable = (bool)s.IsAvailable,
+                    // Lấy "hàng" từ bảng SeatClass đã "vớ"
+                    SeatClassName = s.SeatClass.Name,
+                    PriceMultiplier = (decimal)s.SeatClass.PriceMultiplier
+                })
+                .ToListAsync();
+                    return seats;
         }
     }
 }

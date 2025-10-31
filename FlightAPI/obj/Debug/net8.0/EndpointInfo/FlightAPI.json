@@ -414,6 +414,37 @@
         }
       }
     },
+    "/api/Bookings/select-seat": {
+      "put": {
+        "tags": [
+          "Bookings"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectSeatRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectSeatRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectSeatRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FlightInstances": {
       "get": {
         "tags": [
@@ -554,6 +585,29 @@
         }
       },
       "delete": {
+        "tags": [
+          "FlightInstances"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FlightInstances/{id}/seats": {
+      "get": {
         "tags": [
           "FlightInstances"
         ],
@@ -909,6 +963,24 @@
           "password": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SelectSeatRequestDto": {
+        "required": [
+          "bookingFlightId",
+          "seatId"
+        ],
+        "type": "object",
+        "properties": {
+          "bookingFlightId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
