@@ -48,7 +48,7 @@ public class FlightManagerServiceController : ControllerBase
 
         var newFlight = await _flightService.CreateAsync(request);
         // Trả về 201 Created và đường dẫn đến tài nguyên mới
-        return CreatedAtAction(nameof(GetById), new { id = newFlight.Id }, newFlight);
+        return CreatedAtAction(nameof(GetById), new { id = newFlight.FlightId }, newFlight);
     }
 
     // PUT: api/Flights/5

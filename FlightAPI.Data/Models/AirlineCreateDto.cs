@@ -7,7 +7,7 @@ namespace FlightAPI.Models
     {
         [Required]
         [StringLength(3)]
-        public string AirlineCode { get; set; } // Ví dụ: VN, VJ
+        public string AirlineCode { get; set; }  // Ví dụ: VN, VJ
 
         [Required]
         [StringLength(100)]

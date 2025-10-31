@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Identity; // <-- Bạn có cái này chưa?
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace FlightAPI.Data.Entities;
 
-public partial class AirCloudDbContext : DbContext
+public partial class AirCloudDbContext : IdentityDbContext<Account, Role, int>
 {
     public AirCloudDbContext()
     {
@@ -15,86 +17,155 @@ public partial class AirCloudDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Account> Accounts { get; set; }
+    // BƯỚC 2: BỎ DbSet CHO ACCOUNT VÀ ROLE
+    // =================================================================
+    // public virtual DbSet<Account> Accounts { get; set; } // <-- XOÁ (IdentityDbContext đã có)
+    // public virtual DbSet<Role> Roles { get; set; } // <-- XOÁ (IdentityDbContext đã có)
 
+    // Giữ nguyên tất cả các DbSet khác
     public virtual DbSet<Airline> Airlines { get; set; }
-
     public virtual DbSet<Airport> Airports { get; set; }
-
     public virtual DbSet<AuditLog> AuditLogs { get; set; }
-
     public virtual DbSet<Banner> Banners { get; set; }
-
     public virtual DbSet<Booking> Bookings { get; set; }
-
     public virtual DbSet<BookingFlight> BookingFlights { get; set; }
-
     public virtual DbSet<BookingService> BookingServices { get; set; }
-
     public virtual DbSet<EmailVerification> EmailVerifications { get; set; }
-
     public virtual DbSet<Flight> Flights { get; set; }
-
     public virtual DbSet<FlightInstance> FlightInstances { get; set; }
-
     public virtual DbSet<LoyaltyTransaction> LoyaltyTransactions { get; set; }
-
     public virtual DbSet<MembershipTier> MembershipTiers { get; set; }
-
     public virtual DbSet<Notification> Notifications { get; set; }
-
     public virtual DbSet<Otp> Otps { get; set; }
-
     public virtual DbSet<Payment> Payments { get; set; }
-
     public virtual DbSet<Promotion> Promotions { get; set; }
-
-    public virtual DbSet<Role> Roles { get; set; }
-
     public virtual DbSet<Seat> Seats { get; set; }
-
     public virtual DbSet<SeatClass> SeatClasses { get; set; }
-
     public virtual DbSet<Service> Services { get; set; }
-
     public virtual DbSet<SupportTicket> SupportTickets { get; set; }
-
     public virtual DbSet<TicketMessage> TicketMessages { get; set; }
 
+    // =================================================================
+    // BƯỚC 3: CẤU HÌNH LẠI OnModelCreating
+    // =================================================================
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // GỌI CÁI NÀY ĐẦU TIÊN! RẤT QUAN TRỌNG!
+        // Nó sẽ tự động cấu hình các bảng Identity (UserLogins, UserClaims, v.v.)
+        base.OnModelCreating(modelBuilder);
+
+        // --- Bắt đầu chỉnh sửa cấu hình Account ---
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.AccountId).HasName("PK__Account__349DA5A6C830A2B1");
-
+            // Giữ nguyên: Cho nó biết tên bảng và schema
             entity.ToTable("Account", "auth");
 
-            entity.HasIndex(e => e.Username, "UQ__Account__536C85E430E6D1B2").IsUnique();
+            // === 1. MAP CÁC CỘT IDENTITY CƠ BẢN (Bạn đã làm đúng) ===
+            entity.Property(e => e.Id).HasColumnName("AccountId");
+            entity.Property(e => e.UserName).HasColumnName("Username");
+            entity.Property(e => e.Email).HasColumnName("Email");
+            entity.Property(e => e.PasswordHash).HasColumnName("PasswordHash");
+            entity.Property(e => e.PhoneNumber).HasColumnName("Phone");
 
-            entity.HasIndex(e => e.Phone, "UQ__Account__5C7E359E3D9F4634").IsUnique();
+            // GIỮ CÁI NÀY, ĐỪNG IGNORE:
+            entity.Property(e => e.EmailConfirmed).HasColumnName("IsEmailConfirmed");
 
+            
+
+            // === 2. "TRICK" IDENTITY: MAP CÁC CỘT NORMALIZED (PHẦN SỬA LỖI) ===
+
+            // === 3. GIỮ NGUYÊN INDEXES (Bạn đã làm đúng) ===
+            entity.HasIndex(e => e.UserName, "UQ__Account__536C85E430E6D1B2").IsUnique();
+            entity.HasIndex(e => e.PhoneNumber, "UQ__Account__5C7E359E3D9F4634").IsUnique();
             entity.HasIndex(e => e.Email, "UQ__Account__A9D10534FB30B529").IsUnique();
 
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(sysdatetime())");
-            entity.Property(e => e.Email).HasMaxLength(150);
-            entity.Property(e => e.FullName).HasMaxLength(150);
-            entity.Property(e => e.IsEmailConfirmed).HasDefaultValue(false);
-            entity.Property(e => e.IsLocked).HasDefaultValue(false);
-            entity.Property(e => e.LockReason).HasMaxLength(255);
-            entity.Property(e => e.LockedBy).HasMaxLength(20);
-            entity.Property(e => e.LoyaltyPoints).HasDefaultValue(0);
-            entity.Property(e => e.PasswordHash).HasMaxLength(255);
-            entity.Property(e => e.Phone).HasMaxLength(10);
-            entity.Property(e => e.Username).HasMaxLength(50);
+            // === 4. IGNORE NHỮNG CỘT TA THỰC SỰ KO CÓ ===
+            // (Đây là những cột không quan trọng bằng)
+            entity.Ignore(e => e.SecurityStamp);
 
+            entity.Ignore(e => e.PhoneNumberConfirmed);
+            entity.Ignore(e => e.TwoFactorEnabled);
+            entity.Ignore(e => e.LockoutEnd);
+            entity.Ignore(e => e.LockoutEnabled);
+            entity.Ignore(e => e.AccessFailedCount);
+
+            entity.Property(e => e.PhoneNumber).HasColumnName("Phone").HasMaxLength(10);
+
+            // Giữ nguyên: Khoá ngoại MembershipTier
             entity.HasOne(d => d.MembershipTier).WithMany(p => p.Accounts)
-                .HasForeignKey(d => d.MembershipTierId)
-                .HasConstraintName("FK_Account_MembershipTier");
+                    .HasForeignKey(d => d.MembershipTierId)
+                    .HasConstraintName("FK_Account_MembershipTier");
 
+            // Bỏ: Quan hệ này không còn (Identity dùng bảng UserRoles)
             entity.HasOne(d => d.Role).WithMany(p => p.Accounts)
-                .HasForeignKey(d => d.RoleId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Account__RoleId__4F7CD00D");
+                     .HasForeignKey(d => d.RoleId)
+                     .OnDelete(DeleteBehavior.ClientSetNull)
+                     .HasConstraintName("FK__Account__RoleId__4F7CD00D");
+        });
+        // --- Kết thúc cấu hình Account ---
+
+
+        // --- Bắt đầu chỉnh sửa cấu hình Role ---
+        modelBuilder.Entity<Role>(entity =>
+        {
+            // Giữ nguyên: Tên bảng và schema
+            entity.ToTable("Role", "auth");
+
+            // Bỏ: base.OnModelCreating đã xử lý Key (trên prop 'Id')
+            // entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE1A3DF201D6");
+
+            // Map 'Id' (từ IdentityRole) sang cột 'RoleId'
+            entity.Property(e => e.Id).HasColumnName("RoleId");
+
+            entity.Property(e => e.Name).HasColumnName("RoleName");
+            entity.Property(e => e.NormalizedName).HasColumnName("NormalizedName");
+
+            // Map 'Name' (từ IdentityRole) sang cột 'RoleName'
+            entity.Property(e => e.Name).HasColumnName("RoleName");
+
+            // Giữ nguyên: Chỉ mục (index)
+            // Chỉ cần đổi tên property (ví dụ: e.RoleName -> e.Name)
+            entity.HasIndex(e => e.Name, "UQ__Role__8A2B6160CED64AE4").IsUnique();
+
+            // Bỏ: Thuộc tính này không còn
+            // entity.Property(e => e.RoleName).HasMaxLength(50);
+        });
+        // --- Kết thúc cấu hình Role ---
+
+
+        // =================================================================
+        // BƯỚC 4: MAP CÁC BẢNG TRUNG GIAN CỦA IDENTITY VÀO SCHEMA "AUTH"
+        // =================================================================
+        modelBuilder.Entity<IdentityUserRole<int>>(entity =>
+        {
+            entity.ToTable("UserRoles", "auth");
+            // Map các khoá ngoại nếu tên cột khác
+            entity.Property(e => e.UserId).HasColumnName("AccountId");
+            entity.Property(e => e.RoleId).HasColumnName("RoleId");
+        });
+
+        modelBuilder.Entity<IdentityUserClaim<int>>(entity =>
+        {
+            entity.ToTable("UserClaims", "auth");
+            entity.Property(e => e.UserId).HasColumnName("AccountId");
+        });
+
+        modelBuilder.Entity<IdentityUserLogin<int>>(entity =>
+        {
+            entity.ToTable("UserLogins", "auth");
+            entity.Property(e => e.UserId).HasColumnName("AccountId");
+        });
+
+        modelBuilder.Entity<IdentityRoleClaim<int>>(entity =>
+        {
+            entity.ToTable("RoleClaims", "auth");
+            entity.Property(e => e.RoleId).HasColumnName("RoleId");
+        });
+
+        modelBuilder.Entity<IdentityUserToken<int>>(entity =>
+        {
+            entity.ToTable("UserTokens", "auth");
+            entity.Property(e => e.UserId).HasColumnName("AccountId");
         });
 
         modelBuilder.Entity<Airline>(entity =>
@@ -407,13 +478,21 @@ public partial class AirCloudDbContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE1A3DF201D6");
 
+            // Giữ nguyên: Tên bảng và schema
             entity.ToTable("Role", "auth");
 
-            entity.HasIndex(e => e.RoleName, "UQ__Role__8A2B6160CED64AE4").IsUnique();
+            // Bỏ: base.OnModelCreating đã xử lý Key (trên prop 'Id')
+            // entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE1A3DF201D6");
 
-            entity.Property(e => e.RoleName).HasMaxLength(50);
+            // SỬA: Map 'Id' (từ IdentityRole) sang cột 'RoleId' (trong DB)
+            entity.Property(e => e.Id).HasColumnName("RoleId");
+
+            // SỬA: Map 'Name' (từ IdentityRole) sang cột 'RoleName' (trong DB)
+            entity.Property(e => e.Name).HasColumnName("RoleName");
+
+            // SỬA: Dùng 'e.Name' cho index, thay vì 'e.RoleName'
+            entity.HasIndex(e => e.Name, "UQ__Role__8A2B6160CED64AE4").IsUnique();
         });
 
         modelBuilder.Entity<Seat>(entity =>

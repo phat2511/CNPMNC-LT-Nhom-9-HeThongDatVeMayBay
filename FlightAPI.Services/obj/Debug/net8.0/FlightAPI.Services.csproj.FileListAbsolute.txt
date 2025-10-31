@@ -8,9 +8,9 @@ C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\Flight
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.AssemblyInfoInputs.cache
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.AssemblyInfo.cs
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.csproj.CoreCompileInputs.cache
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.sourcelink.json
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAP.C8E4E6A0.Up2Date
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.dll
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\refint\FlightAPI.Services.dll
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.pdb
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\ref\FlightAPI.Services.dll
-C:\Users\vt412\source\repos\FlightAPI\FlightAPI.Services\obj\Debug\net8.0\FlightAPI.Services.sourcelink.json

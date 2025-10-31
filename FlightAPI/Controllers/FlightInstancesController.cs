@@ -2,7 +2,7 @@
 using FlightAPI.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")] // Route chỉ dùng /api/Flights (dễ nhớ hơn)
+[Route("api/[controller]")] 
 [ApiController]
 public class FlightInstancesController : ControllerBase
 {
@@ -13,18 +13,27 @@ public class FlightInstancesController : ControllerBase
         _service = service;
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var instances = await _service.GetAllAsync();
+        return Ok(instances);
+    }
+
     // GET: api/Flights/Search?depCode=SGN&arrCode=HAN&date=2025-12-01
+    // GET: api/FlightInstances/Search
     [HttpGet("Search")]
     public async Task<IActionResult> SearchFlights(
-        [FromQuery] string depCode,
-        [FromQuery] string arrCode,
-        [FromQuery] DateTime date)
+        [FromQuery] string? depCode, // Sửa: Thêm '?'
+        [FromQuery] string? arrCode, // Sửa: Thêm '?'
+        [FromQuery] DateTime? date) // Sửa: Thêm '?'
     {
+        // Logic này sẽ gọi Service (đã hỗ trợ nullable)
         var flights = await _service.SearchFlightsAsync(depCode, arrCode, date);
         return Ok(flights);
     }
 
-    // GET: api/Flights/{id}
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -33,7 +42,7 @@ public class FlightInstancesController : ControllerBase
         return Ok(instance);
     }
 
-    // POST: api/Flights
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] FlightInstanceCreateDto dto)
     {

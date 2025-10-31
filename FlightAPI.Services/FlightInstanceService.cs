@@ -16,25 +16,51 @@ namespace FlightAPI.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<FlightInstanceReadDto>> SearchFlightsAsync(
-            string depCode, string arrCode, DateTime date)
+        // =======================================================
+        // ĐÃ THÊM: PHƯƠNG THỨC GET ALL (BỊ THIẾU TRONG CODE CŨ)
+        // =======================================================
+        public async Task<IEnumerable<FlightInstanceReadDto>> GetAllAsync()
         {
-            // 1. Xây dựng truy vấn
-            var query = _context.FlightInstances
-                // Yêu cầu EF Core Join các bảng liên quan (Bắt buộc cho Mapping)
+            var instances = await _context.FlightInstances
                 .Include(fi => fi.Flight)
-                    .ThenInclude(f => f.AirlineCodeNavigation) // Lấy Tên Hãng
-                .Include(fi => fi.DepartureAirportNavigation) // Lấy Thông tin Sân bay Đi
-                .Include(fi => fi.ArrivalAirportNavigation)   // Lấy Thông tin Sân bay Đến
-                .AsNoTracking(); // Tối ưu cho thao tác đọc (GET)
+                    .ThenInclude(f => f.AirlineCodeNavigation)
+                .Include(fi => fi.DepartureAirportNavigation)
+                .Include(fi => fi.ArrivalAirportNavigation)
+                .AsNoTracking()
+                .ToListAsync();
+
+            return _mapper.Map<IEnumerable<FlightInstanceReadDto>>(instances);
+        }
+
+        // =======================================================
+        // ĐÃ SỬA: TÌM KIẾM (Cho phép tham số tùy chọn)
+        // =======================================================
+        public async Task<IEnumerable<FlightInstanceReadDto>> SearchFlightsAsync(
+            string? depCode, string? arrCode, DateTime? date) // Sửa: Thêm '?' để cho phép null
+        {
+            var query = _context.FlightInstances
+                .Include(fi => fi.Flight)
+                    .ThenInclude(f => f.AirlineCodeNavigation)
+                .Include(fi => fi.DepartureAirportNavigation)
+                .Include(fi => fi.ArrivalAirportNavigation)
+                .AsNoTracking();
 
             // 2. Lọc theo điều kiện (Filtering)
-            query = query.Where(fi => fi.DepartureAirport == depCode && fi.ArrivalAirport == arrCode);
+            if (!string.IsNullOrEmpty(depCode)) // Sửa: Thêm kiểm tra null/empty
+            {
+                query = query.Where(fi => fi.DepartureAirport == depCode);
+            }
 
-            // Lọc theo ngày (Chỉ lấy phần Date, bỏ qua giờ)
-            query = query.Where(fi => EF.Property<DateTime>(fi, nameof(fi.DepartureTime)).Date == date.Date);
+            if (!string.IsNullOrEmpty(arrCode)) // Sửa: Thêm kiểm tra null/empty
+            {
+                query = query.Where(fi => fi.ArrivalAirport == arrCode);
+            }
 
-            // 3. Thực thi truy vấn và ánh xạ
+            if (date.HasValue) // Sửa: Thêm kiểm tra null
+            {
+                query = query.Where(fi => fi.DepartureTime.Date == date.Value.Date);
+            }
+
             var results = await query.ToListAsync();
             return _mapper.Map<IEnumerable<FlightInstanceReadDto>>(results);
         }
@@ -43,86 +69,74 @@ namespace FlightAPI.Services
         {
             var entity = _mapper.Map<FlightInstance>(dto);
 
-            // Logic nghiệp vụ: Kiểm tra DepartureTime có hợp lệ không (Database cũng kiểm tra)
             if (entity.DepartureTime <= DateTime.Now)
                 throw new InvalidOperationException("Thời gian khởi hành phải ở tương lai.");
 
             _context.FlightInstances.Add(entity);
             await _context.SaveChangesAsync();
 
-            // Tải lại Entity sau khi lưu để có các tham chiếu (ví dụ: tên hãng)
             var createdInstance = await _context.FlightInstances
                 .Include(fi => fi.Flight)
                     .ThenInclude(f => f.AirlineCodeNavigation)
                 .Include(fi => fi.DepartureAirportNavigation)
                 .Include(fi => fi.ArrivalAirportNavigation)
-                .FirstOrDefaultAsync(fi => fi.FlightInstanceId == entity.FlightInstanceId);
+                .AsNoTracking()
+                .FirstOrDefaultAsync(fi => fi.FlightInstanceId == entity.FlightInstanceId); 
 
             return _mapper.Map<FlightInstanceReadDto>(createdInstance);
         }
 
         public async Task<FlightInstanceReadDto?> GetInstanceByIdAsync(int id)
         {
-            // Tương tự, dùng Include để lấy đầy đủ thông tin khi GET
             var instance = await _context.FlightInstances
-                 .Include(fi => fi.Flight)
+                .Include(fi => fi.Flight)
                     .ThenInclude(f => f.AirlineCodeNavigation)
-                 .Include(fi => fi.DepartureAirportNavigation)
-                 .Include(fi => fi.ArrivalAirportNavigation)
-                 .FirstOrDefaultAsync(fi => fi.FlightInstanceId == id);
+                .Include(fi => fi.DepartureAirportNavigation)
+                .Include(fi => fi.ArrivalAirportNavigation)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(fi => fi.FlightInstanceId == id); // Sửa: Dùng 'Id'
 
             return _mapper.Map<FlightInstanceReadDto>(instance);
         }
 
-        // ... (Update/Delete)
         public async Task<bool> UpdateInstanceAsync(int id, FlightInstanceCreateDto dto)
         {
-            // 1. Tìm Entity hiện tại
+            // FindAsync hoạt động trên Khóa chính (Id)
             var entityToUpdate = await _context.FlightInstances.FindAsync(id);
 
             if (entityToUpdate == null)
             {
-                return false; // Trả về false nếu không tìm thấy ID
+                return false;
             }
 
-            // 2. Ánh xạ dữ liệu từ DTO vào Entity hiện tại
-            // AutoMapper sẽ chỉ cập nhật các thuộc tính mà bạn muốn thay đổi (thời gian, giá vé, v.v.)
             _mapper.Map(dto, entityToUpdate);
 
-            // Đảm bảo khóa ngoại FlightId không bị đổi thành 0 nếu nó được bảo vệ
-            // Nếu bạn muốn cho phép đổi FlightId, hãy kiểm tra tính hợp lệ ở đây.
-
-            // 3. Lưu thay đổi
             try
             {
-                _context.FlightInstances.Update(entityToUpdate);
+                // Không cần gọi .Update() khi đã dùng FindAsync (EF Core đang theo dõi)
                 await _context.SaveChangesAsync();
                 return true;
             }
             catch (DbUpdateConcurrencyException)
             {
-                // Xử lý lỗi đồng thời nếu có
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Xử lý các lỗi khác (ví dụ: lỗi ràng buộc check constraint)
-                // Log lỗi tại đây
                 return false;
             }
         }
 
         public async Task<bool> DeleteInstanceAsync(int id)
         {
-            // 1. Tìm Entity
+            // FindAsync hoạt động trên Khóa chính (Id)
             var entityToDelete = await _context.FlightInstances.FindAsync(id);
 
             if (entityToDelete == null)
             {
-                return false; // Không tìm thấy để xóa
+                return false;
             }
 
-            // 2. Xóa và lưu thay đổi
             _context.FlightInstances.Remove(entityToDelete);
             await _context.SaveChangesAsync();
             return true;
