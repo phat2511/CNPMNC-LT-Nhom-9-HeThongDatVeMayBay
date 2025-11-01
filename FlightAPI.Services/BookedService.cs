@@ -2,6 +2,7 @@
 using FlightAPI.Data; // Cho DbContext
 using FlightAPI.Data.Entities; // Cho Entities (Booking, FlightInstance...)
 using FlightAPI.Services.Dtos.Booking; // Cho DTOs
+using FlightAPI.Services.Dtos.Payment;
 using Microsoft.EntityFrameworkCore; // Cho .Include() và .FirstOrDefaultAsync()
 
 namespace FlightAPI.Services
@@ -113,6 +114,87 @@ namespace FlightAPI.Services
                 }).ToList()
                 // ============================
             };
+        }
+
+        public async Task<PaymentResponseDto> ProcessPaymentAsync(int bookingId, PaymentRequestDto dto, int accountId)
+        {
+            // === BƯỚC 1: MỞ "LƯỚI AN TOÀN" (Transaction) ===
+            // 'await using' đảm bảo dù thành công hay thất bại, nó đều tự dọn dẹp
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+
+            try
+            {
+                // === BƯỚC 2: KIỂM TRA ĐƠN HÀNG ===
+
+                // 2.1: Tìm đơn hàng
+                var booking = await _context.Bookings
+                    .FirstOrDefaultAsync(b => b.BookingId == bookingId);
+
+                if (booking == null)
+                {
+                    throw new KeyNotFoundException("Đơn hàng (Booking) không tồn tại.");
+                }
+
+                // 2.2: KIỂM TRA "AN NINH" (Check "chủ")
+                if (booking.AccountId != accountId)
+                {
+                    throw new Exception("Bạn không có quyền thanh toán cho đơn hàng của người khác.");
+                }
+
+                // 2.3: KIỂM TRA LOGIC (Check "trạng thái")
+                // Đơn này đã "Confirmed" (Thành công) hoặc "Cancelled" (Đã hủy) chưa?
+                if (booking.BookingStatus != "Pending")
+                {
+                    throw new InvalidOperationException($"Không thể thanh toán. Đơn hàng đang ở trạng thái '{booking.BookingStatus}'.");
+                }
+
+                // === BƯỚC 3: TẠO "BIÊN LAI" (Payment Entity) ===
+                // (Trong thực tế, sếp sẽ gọi cổng thanh toán ở đây. 
+                //  Giờ ta "giả lập" là nó thành công luôn.)
+
+                var newPayment = new Payment
+                {
+                    BookingId = bookingId,
+                    Amount = booking.TotalAmount, // Lấy tiền từ đơn hàng
+                    PaymentMethod = dto.PaymentMethod,
+                    PaidAt = DateTime.UtcNow,
+                    Status = "Success" // Giả lập là "Thành công"
+                };
+
+                _context.Payments.Add(newPayment);
+
+                // === BƯỚC 4: "CHỐT SỔ" (Update Booking Entity) ===
+                // "Đá" trạng thái đơn hàng
+                booking.BookingStatus = "Confirmed";
+
+                // === BƯỚC 5: LƯU & "CHỐT" TRANSACTION ===
+
+                // 5.1: Lưu cả 2 thay đổi (Thêm Payment MỚI và Sửa Booking CŨ)
+                await _context.SaveChangesAsync();
+
+                // 5.2: "Chốt" Lưới An Toàn. Báo với DB: "OK, cho 2 thay đổi này 'sống'!"
+                await transaction.CommitAsync();
+
+                // === BƯỚC 6: TRẢ "BIÊN LAI XỊN" (DTO) VỀ ===
+                return new PaymentResponseDto
+                {
+                    PaymentId = newPayment.PaymentId,
+                    BookingId = newPayment.BookingId,
+                    PaymentStatus = newPayment.Status,
+                    BookingStatus = booking.BookingStatus, // Trạng thái mới: "Confirmed"
+                    AmountPaid = (decimal)newPayment.Amount,
+                    PaidAt = (DateTime)newPayment.PaidAt
+                };
+            }
+            catch (Exception ex)
+            {
+                // === BƯỚC X (LỖI!): "QUAY TUA" (Rollback) ===
+                // Báo với DB: "Hủy! Xóa sổ mọi thay đổi vừa làm!"
+                await transaction.RollbackAsync();
+
+                // Ném lỗi ra cho Controller bắt
+                throw new Exception($"Thanh toán thất bại. {ex.Message}");
+            }
         }
 
         public async Task SelectSeatAsync(SelectSeatRequestDto dto, int accountId)
