@@ -1,3 +1,6 @@
-# Binaries
-[Bb]in/
-[Oo]bj/
+# Visual Studio / IDE temporary files
+.vs/
+*/obj/
+*.vsidx
+*.db-shm
+*.db-wal
