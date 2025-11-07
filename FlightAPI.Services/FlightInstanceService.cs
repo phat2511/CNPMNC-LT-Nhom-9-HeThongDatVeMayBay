@@ -73,16 +73,26 @@ namespace FlightAPI.Services
             if (entity.DepartureTime <= DateTime.Now)
                 throw new InvalidOperationException("Thời gian khởi hành phải ở tương lai.");
 
+            // === BƯỚC NÂNG CẤP 1: "GỌI ĐẺ" ===
+            // Trước khi "thêm" (Add), "bắt" nó "đẻ" ghế (Seat)
+            GenerateDummySeats(entity); // "entity" sẽ được "nhồi" đầy ghế
+
+            // === BƯỚC NÂNG CẤP 2: LƯU 1 LẦN ===
+            // "Thêm" (Add) "thằng" cha (FlightInstance)
+            // EF Core "thông minh", nó sẽ "tự động" "thêm" (Add) luôn 15 "đứa con" (Seats)
             _context.FlightInstances.Add(entity);
+
+            // "Lưu" (Save) 1 lần, 16 "mạng" (1 cha, 15 con) sẽ được INSERT vào DB
             await _context.SaveChangesAsync();
 
+            // (Phần 're-query' của sếp giữ nguyên, rất "chuẩn"...)
             var createdInstance = await _context.FlightInstances
                 .Include(fi => fi.Flight)
                     .ThenInclude(f => f.AirlineCodeNavigation)
                 .Include(fi => fi.DepartureAirportNavigation)
                 .Include(fi => fi.ArrivalAirportNavigation)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(fi => fi.FlightInstanceId == entity.FlightInstanceId); 
+                .FirstOrDefaultAsync(fi => fi.FlightInstanceId == entity.FlightInstanceId);
 
             return _mapper.Map<FlightInstanceReadDto>(createdInstance);
         }
@@ -162,6 +172,44 @@ namespace FlightAPI.Services
                 })
                 .ToListAsync();
                     return seats;
+        }
+
+        private void GenerateDummySeats(FlightInstance newInstance)
+        {
+            // (Hàm này "giả lập" việc "đẻ" ghế theo sơ đồ máy bay)
+            // (Sếp phải đảm bảo SeatClassId=1 (Economy) và 3 (Business) là có thật!)
+
+            // Đẻ 10 ghế Economy (A01-A05, B01-B05)
+            for (int i = 1; i <= 5; i++)
+            {
+                // (Giả sử Entity 'FlightInstance' có ICollection<Seat> Seats)
+                newInstance.Seats.Add(new Seat
+                {
+                    SeatNumber = $"A0{i}",
+                    SeatClassId = 1, // Economy
+                    IsAvailable = true
+                });
+                newInstance.Seats.Add(new Seat
+                {
+                    SeatNumber = $"B0{i}",
+                    SeatClassId = 1, // Economy
+                    IsAvailable = true
+                });
+            }
+
+            // Đẻ 5 ghế Business (F01-F05)
+            for (int i = 1; i <= 5; i++)
+            {
+                newInstance.Seats.Add(new Seat
+                {
+                    SeatNumber = $"F0{i}",
+                    SeatClassId = 3, // Business
+                    IsAvailable = true
+                });
+            }
+
+            // (Không cần Add vào context, EF Core tự "thấy" 15 "đứa con" này
+            //  khi sếp "Add" "thằng" cha 'newInstance')
         }
     }
 }

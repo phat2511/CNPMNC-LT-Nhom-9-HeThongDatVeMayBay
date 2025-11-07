@@ -97,23 +97,7 @@ namespace FlightAPI.Services
             await _context.SaveChangesAsync();
 
             // === BƯỚC 6: TRẢ "BIÊN NHẬN" (DTO) VỀ ===
-            return new BookingResponseDto
-            {
-                BookingId = newBooking.BookingId,
-                BookingCode = newBooking.BookingCode,
-                TotalAmount = newBooking.TotalAmount,
-                BookingStatus = newBooking.BookingStatus,
-                CreatedAt = (DateTime)newBooking.CreatedAt,
-                FlightInfo = $"{flight.DepartureAirportNavigation.AirportCode} -> {flight.ArrivalAirportNavigation.AirportCode}",
-
-                // === PHẦN "VÁ" NẰM Ở ĐÂY ===
-                BookingFlights = newBooking.BookingFlights.Select(bf => new BookingFlightIdDto
-                {
-                    BookingFlightId = bf.BookingFlightId,
-                    PassengerName = bf.PassengerName
-                }).ToList()
-                // ============================
-            };
+            return await GetBookingResponseDtoById(newBooking.BookingId);
         }
 
         public async Task<PaymentResponseDto> ProcessPaymentAsync(int bookingId, PaymentRequestDto dto, int accountId)
@@ -282,6 +266,195 @@ namespace FlightAPI.Services
 
             // TODO: (Nâng cao) Phải check xem code này đã tồn tại trong DB chưa
             return result;
+        }
+
+        public async Task<IEnumerable<BookingHistoryDto>> GetMyBookingHistoryAsync(int accountId)
+        {
+            // === BƯỚC 1: "XUỐNG KHO" (VÀO BẢNG BOOKING) ===
+            var bookings = await _context.Bookings
+                // 1.1: Lọc: Chỉ lấy đơn của "tôi" (accountId)
+                .Where(b => b.AccountId == accountId)
+
+                // 1.2: Sắp xếp: Đơn mới nhất lên trên
+                .OrderByDescending(b => b.CreatedAt)
+
+                // === BƯỚC 2: "THAM LAM" (VỚ HÀNG LOẠT - .Include()) ===
+
+                // 2.1: Vớ "vé" (BookingFlights)
+                .Include(b => b.BookingFlights)
+                    // 2.1.1: Từ "vé", vớ "ghế" (Seat) (để lấy SeatNumber)
+                    .ThenInclude(bf => bf.Seat)
+
+                // 2.2: Vớ "chuyến bay" (FlightInstance) (vì 'vé' chỉ có ID chuyến bay)
+                // (Lưu ý: Ta phải "vớ" từ cái "vé" đầu tiên, vì 1 đơn có thể có 2 chuyến)
+                .Include(b => b.BookingFlights)
+                    .ThenInclude(bf => bf.FlightInstance)
+                        // 2.2.1: Từ "chuyến", vớ "tuyến" (Flight) (để lấy FlightNumber)
+                        .ThenInclude(fi => fi.Flight)
+
+                .Include(b => b.BookingFlights)
+                    .ThenInclude(bf => bf.FlightInstance)
+                        // 2.2.2: Từ "chuyến", vớ "sân bay đi" (để lấy "SGN")
+                        .ThenInclude(fi => fi.DepartureAirportNavigation)
+
+                .Include(b => b.BookingFlights)
+                    .ThenInclude(bf => bf.FlightInstance)
+                        // 2.2.3: Từ "chuyến", vớ "sân bay đến" (để lấy "HAN")
+                        .ThenInclude(fi => fi.ArrivalAirportNavigation)
+
+                .AsNoTracking() // (Vì là "chỉ đọc", không "sửa", nên "đọc lẹ")
+
+                // === BƯỚC 3: "NHÀO NẶN" (SELECT) ===
+                // "Nặn" cái "đống" Entity "nặng đô" ở trên thành cái DTO "nhẹ bẫng"
+                .Select(b => new BookingHistoryDto
+                {
+                    // Lấy từ "Đơn mẹ" (Booking)
+                    BookingId = b.BookingId,
+                    BookingCode = b.BookingCode,
+                    BookingStatus = b.BookingStatus,
+                    TotalAmount = b.TotalAmount,
+                    CreatedAt = (DateTime)b.CreatedAt,
+
+                    // Lấy từ "Cháu" (FlightInstance & Flight)
+                    // (Ta 'First' vì 1 đơn hàng (booking) chỉ bay 1 chuyến (instance))
+                    FlightNumber = b.BookingFlights.First().FlightInstance.Flight.FlightNumber,
+                    DepartureAirport = b.BookingFlights.First().FlightInstance.DepartureAirportNavigation.AirportCode,
+                    ArrivalAirport = b.BookingFlights.First().FlightInstance.ArrivalAirportNavigation.AirportCode,
+                    DepartureTime = b.BookingFlights.First().FlightInstance.DepartureTime,
+                    ArrivalTime = b.BookingFlights.First().FlightInstance.ArrivalTime,
+
+                    // "Nặn" list "chắt" (Passengers)
+                    Passengers = b.BookingFlights.Select(bf => new HistoryPassengerDto
+                    {
+                        PassengerName = bf.PassengerName,
+                        // Check xem "ghế" có "lót" (Include) được không
+                        SeatNumber = bf.Seat != null ? bf.Seat.SeatNumber : null
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            return bookings;
+        }
+
+        private async Task<BookingResponseDto> GetBookingResponseDtoById(int bookingId)
+        {
+            // 1. "Xuống kho"
+            var booking = await _context.Bookings
+                // 2. "Tham lam": Vớ "vé"
+                .Include(b => b.BookingFlights)
+                    // 2.1: Từ "vé", vớ "chuyến bay"
+                    .ThenInclude(bf => bf.FlightInstance)
+                        // 2.1.1: Từ "chuyến", vớ "sân bay đi/đến"
+                        .ThenInclude(fi => fi.DepartureAirportNavigation)
+                .Include(b => b.BookingFlights)
+                    .ThenInclude(bf => bf.FlightInstance)
+                        .ThenInclude(fi => fi.ArrivalAirportNavigation)
+                // 3. Lọc
+                .AsNoTracking()
+                .FirstOrDefaultAsync(b => b.BookingId == bookingId);
+
+            if (booking == null)
+            {
+                throw new KeyNotFoundException("Lỗi nội bộ: Không tìm thấy đơn hàng sau khi xử lý.");
+            }
+
+            // 4. "In" (Map)
+            var flight = booking.BookingFlights.First().FlightInstance; // Lấy "chuyến"
+
+            return new BookingResponseDto
+            {
+                BookingId = booking.BookingId,
+                BookingCode = booking.BookingCode,
+                TotalAmount = booking.TotalAmount,
+                BookingStatus = booking.BookingStatus,
+                CreatedAt = (DateTime)booking.CreatedAt,
+                FlightInfo = $"{flight.DepartureAirportNavigation.AirportCode} -> {flight.ArrivalAirportNavigation.AirportCode}",
+                BookingFlights = booking.BookingFlights.Select(bf => new BookingFlightIdDto
+                {
+                    BookingFlightId = bf.BookingFlightId,
+                    PassengerName = bf.PassengerName
+                }).ToList()
+            };
+        }
+
+        public async Task<BookingResponseDto> AddServiceToBookingAsync(int bookingId, AddServiceRequestDto dto, int accountId)
+        {
+            // === BƯỚC 1: MỞ "LƯỚI AN TOÀN" (Transaction) ===
+            await using var transaction = await _context.Database.BeginTransactionAsync();
+
+            try
+            {
+                // === BƯỚC 2: KIỂM TRA "HÀNG" ===
+
+                // 2.1: Tìm "Đơn mẹ" (Booking)
+                var booking = await _context.Bookings.FindAsync(bookingId);
+                if (booking == null) throw new KeyNotFoundException("Đơn hàng (Booking) không tồn tại.");
+
+                // 2.2: Tìm "Dịch vụ" (Service)
+                var service = await _context.Services.FindAsync(dto.ServiceId);
+                if (service == null) throw new KeyNotFoundException("Dịch vụ (Service) không tồn tại.");
+
+                // === BƯỚC 3: KIỂM TRA "AN NINH" & "LOGIC" ===
+
+                // 3.1: AN NINH (Check "chủ")
+                if (booking.AccountId != accountId)
+                {
+                    throw new Exception("Bạn không có quyền sửa đơn hàng của người khác.");
+                }
+
+                // 3.2: LOGIC (Check "trạng thái")
+                // Chỉ cho "thêm" khi đơn còn "Pending" (Chờ)
+                if (booking.BookingStatus != "Pending")
+                {
+                    throw new InvalidOperationException($"Không thể thêm. Đơn hàng đang ở trạng thái '{booking.BookingStatus}'.");
+                }
+
+                // === BƯỚC 4: TÍNH TOÁN & "GHI SỔ" ===
+
+                // 4.1: Tính tiền cho "hàng" mới
+                decimal serviceTotalPrice = (decimal)(service.Price * dto.Quantity);
+
+                // 4.2: Check xem "hàng" này đã "thêm" (Add) bao giờ chưa?
+                var existingBookingService = await _context.BookingServices
+                    .FirstOrDefaultAsync(bs => bs.BookingId == bookingId && bs.ServiceId == dto.ServiceId);
+
+                if (existingBookingService != null)
+                {
+                    // A! Có rồi -> "Sửa" (Update) số lượng
+                    existingBookingService.Quantity += dto.Quantity;
+                    existingBookingService.TotalPrice += serviceTotalPrice;
+                }
+                else
+                {
+                    // A! Chưa có -> "Tạo" (Create) "dòng" mới
+                    var newBookingService = new BookingService // (Đây là "Tuấn Két Sắt" - Entity)
+                    {
+                        BookingId = bookingId,
+                        ServiceId = dto.ServiceId,
+                        Quantity = dto.Quantity,
+                        TotalPrice = serviceTotalPrice
+                    };
+                    _context.BookingServices.Add(newBookingService);
+                }
+
+                // 4.3: "Cập nhật" (Update) "Đơn mẹ" (TotalAmount)
+                // "Cộng dồn" tiền "hàng" mới vào "tổng"
+                booking.TotalAmount += serviceTotalPrice;
+
+                // === BƯỚC 5: LƯU & "CHỐT" TRANSACTION ===
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                // === BƯỚC 6: GỌI "MÁY IN" XỊN ===
+                // "In" lại cái "biên nhận" (đã "tăng tiền")
+                return await GetBookingResponseDtoById(bookingId);
+            }
+            catch (Exception ex)
+            {
+                // === BƯỚC X (LỖI!): "QUAY TUA" (Rollback) ===
+                await transaction.RollbackAsync();
+                throw new Exception($"Thêm dịch vụ thất bại. {ex.Message}");
+            }
         }
     }
 }

@@ -100,5 +100,52 @@ namespace FlightAPI.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpGet("my-history")] // <--- API LỊCH SỬ VÉ
+        [Authorize] // (Bất kỳ ai 'login' đều xem được, không cần 'Admin')
+        public async Task<IActionResult> GetMyHistory()
+        {
+            try
+            {
+                var accountId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                // Gọi "thợ" vào xử lý (ta sẽ làm "não" ở bước sau)
+                var history = await _bookingService.GetMyBookingHistoryAsync(accountId);
+
+                return Ok(history);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("{bookingId}/services")] // <--- API THÊM DỊCH VỤ
+        [Authorize] // (Tất nhiên là phải "login")
+        public async Task<IActionResult> AddServiceToBooking([FromRoute] int bookingId, [FromBody] AddServiceRequestDto dto)
+        {
+            try
+            {
+                var accountId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                // Gọi "thợ" vào xử lý (ta sẽ làm "não" ở bước sau)
+                // Nó sẽ "nhả" lại cái đơn hàng đã "tăng tiền"
+                var updatedBooking = await _bookingService.AddServiceToBookingAsync(bookingId, dto, accountId);
+
+                return Ok(updatedBooking); // Trả về "biên nhận" mới
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message }); // 404 (Không tìm thấy đơn/dịch vụ)
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message }); // 400 (Dịch vụ đã có, đơn đã hủy...)
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message }); // <--- SỬA THÀNH DẤU "="
+            }
+        }
     }
 }

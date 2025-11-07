@@ -247,6 +247,27 @@
   },
   {
     "ContainingType": "FlightAPI.Controllers.BookingsController",
+    "Method": "AddServiceToBooking",
+    "RelativePath": "api/Bookings/{bookingId}/services",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "FlightAPI.Services.Dtos.Booking.AddServiceRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightAPI.Controllers.BookingsController",
     "Method": "ProcessPayment",
     "RelativePath": "api/Bookings/{id}/payment",
     "HttpMethod": "POST",
@@ -264,6 +285,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FlightAPI.Controllers.BookingsController",
+    "Method": "GetMyHistory",
+    "RelativePath": "api/Bookings/my-history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

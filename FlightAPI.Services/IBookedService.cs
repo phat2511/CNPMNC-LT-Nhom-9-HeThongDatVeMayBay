@@ -1,4 +1,5 @@
-﻿using FlightAPI.Services.Dtos.Booking;
+﻿
+using FlightAPI.Services.Dtos.Booking;
 using FlightAPI.Services.Dtos.Payment;
 
 namespace FlightAPI.Services
@@ -10,5 +11,9 @@ namespace FlightAPI.Services
         Task SelectSeatAsync(SelectSeatRequestDto dto, int accountId);
 
         Task<PaymentResponseDto> ProcessPaymentAsync(int bookingId, PaymentRequestDto dto, int accountId);
+
+        Task<IEnumerable<BookingHistoryDto>> GetMyBookingHistoryAsync(int accountId);
+
+        Task<BookingResponseDto> AddServiceToBookingAsync(int bookingId, AddServiceRequestDto dto, int accountId);
     }
 }

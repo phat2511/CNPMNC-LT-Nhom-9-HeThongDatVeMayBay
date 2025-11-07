@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlightAPI.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+030fd0199b448195382aea45ec8c7a9768751975")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67a4057d317368a6cf3f109cc6c557b5a78a3bd1")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlightAPI.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlightAPI.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
