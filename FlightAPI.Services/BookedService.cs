@@ -17,86 +17,108 @@ namespace FlightAPI.Services
             _context = context;
         }
 
+        // (Hàm này giờ "thông minh" hơn)
         public async Task<BookingResponseDto> CreateBookingAsync(BookingRequestDto dto, int accountId)
         {
-            // === BƯỚC 1: KIỂM TRA ĐẦU VÀO ===
-
-            // 1.1: Tìm chuyến bay
+            // === BƯỚC 1: KIỂM TRA "HÀNG" (Như cũ) ===
             var flight = await _context.FlightInstances
-                .Include(fi => fi.DepartureAirportNavigation) // Lấy tên sân bay đi
-                .Include(fi => fi.ArrivalAirportNavigation) // Lấy tên sân bay đến
+                .Include(fi => fi.DepartureAirportNavigation)
+                .Include(fi => fi.ArrivalAirportNavigation)
                 .FirstOrDefaultAsync(fi => fi.FlightInstanceId == dto.FlightInstanceId);
+            if (flight == null) throw new KeyNotFoundException("Chuyến bay không tồn tại.");
 
-            if (flight == null)
-            {
-                throw new KeyNotFoundException("Chuyến bay không tồn tại.");
-            }
-
-            // 1.2: Tìm hạng ghế (để lấy hệ số nhân tiền)
             var seatClass = await _context.SeatClasses.FindAsync(dto.SeatClassId);
-            if (seatClass == null)
-            {
-                throw new KeyNotFoundException("Hạng ghế không tồn tại.");
-            }
+            if (seatClass == null) throw new KeyNotFoundException("Hạng ghế không tồn tại.");
 
-            // === BƯỚC 2: KIỂM TRA LOGIC NGHIỆP VỤ (Quan trọng) ===
-
+            // === BƯỚC 2: KIỂM TRA VÉ (Như cũ) ===
             int passengersCount = dto.Passengers.Count;
-
-            // Đếm xem hạng ghế này còn bao nhiêu ghế TRỐNG
             int availableSeats = await _context.Seats.CountAsync(s =>
                 s.FlightInstanceId == dto.FlightInstanceId &&
                 s.SeatClassId == dto.SeatClassId &&
                 s.IsAvailable == true);
-
             if (availableSeats < passengersCount)
             {
                 throw new Exception($"Không đủ vé. Hạng {seatClass.Name} chỉ còn {availableSeats} vé.");
             }
 
-            // === BƯỚC 3: TÍNH TOÁN ===
+            // === BƯỚC NÂNG CẤP 1: TÌM "DEAL" ===
+            Promotion? validPromotion = null; // '?' = "Có thể không có"
+            decimal discountAmount = 0; // Số tiền "chắc chắn" được giảm (mặc định là 0)
 
-            // Tính giá vé cho 1 người (Giá gốc * Hệ số)
+            if (!string.IsNullOrEmpty(dto.PromotionCode))
+            {
+                // "Check" kho 'Deal'
+                var now = DateOnly.FromDateTime(DateTime.UtcNow); // (Vì DB sếp là DATE)
+
+                validPromotion = await _context.Promotions
+                    .FirstOrDefaultAsync(p =>
+                        p.Code == dto.PromotionCode &&
+                        p.IsActive == true &&
+                        (!p.StartDate.HasValue || p.StartDate.Value <= now) &&
+                        (!p.EndDate.HasValue || p.EndDate.Value >= now));
+
+                if (validPromotion == null)
+                {
+                    throw new InvalidOperationException("Mã giảm giá không hợp lệ, hết hạn, hoặc không tồn tại.");
+                }
+            }
+
+            // === BƯỚC NÂNG CẤP 2: TÍNH LẠI TIỀN (Logic mới) ===
             decimal farePerPassenger = (decimal)(flight.BasePrice * seatClass.PriceMultiplier);
+            decimal baseTotalAmount = farePerPassenger * passengersCount; // Tiền "chưa giảm"
 
-            // Tổng tiền (chưa tính dịch vụ, thuế, v.v. - ta làm sau)
-            decimal totalAmount = farePerPassenger * passengersCount;
+            if (validPromotion != null)
+            {
+                // "Deal" xịn, "check" xem giảm kiểu gì
+                if (validPromotion.DiscountPercent.HasValue)
+                {
+                    // Giảm 10%
+                    discountAmount = baseTotalAmount * (validPromotion.DiscountPercent.Value / 100);
+                }
+                else if (validPromotion.DiscountAmount.HasValue)
+                {
+                    // Giảm 50k
+                    discountAmount = validPromotion.DiscountAmount.Value;
+                }
 
-            // === BƯỚC 4: TẠO DỮ LIỆU "KÉT SẮT" (ENTITIES) ===
+                // (Chống "lỗi": Giảm 50k mà đơn có 40k)
+                discountAmount = Math.Min(discountAmount, baseTotalAmount);
+            }
 
-            // 4.1: Tạo "Đơn hàng" (Booking)
+            decimal finalTotalAmount = baseTotalAmount - discountAmount; // Tiền "cuối"
+            if (finalTotalAmount < 0) finalTotalAmount = 0; // (Không "cho" tiền khách)
+
+            // === BƯỚC NÂNG CẤP 3: "GHI SỔ" (Entity mới) ===
             var newBooking = new Booking
             {
                 AccountId = accountId,
-                TotalAmount = totalAmount,
-                BookingStatus = "Pending", // Trạng thái "Chờ thanh toán"
-                BookingCode = GenerateBookingCode(), // Tạo mã PNR
-                CreatedAt = DateTime.UtcNow
+                TotalAmount = finalTotalAmount, // <--- LƯU TIỀN "XỊN"
+                BookingStatus = "Pending",
+                BookingCode = GenerateBookingCode(),
+                CreatedAt = DateTime.UtcNow,
+
+                // "Móc" "Deal" vào "sổ"
+                PromotionId = validPromotion?.PromotionId, // (Lưu 'Id' của 'SALE10')
+                DiscountAmountApplied = discountAmount // (Lưu "đã giảm 50k")
             };
 
-            // 4.2: Tạo "Chi tiết vé" cho từng hành khách (BookingFlight)
+            // (Phần "nhét" hành khách (BookingFlights) giữ nguyên như cũ)
             foreach (var passengerDto in dto.Passengers)
             {
                 newBooking.BookingFlights.Add(new BookingFlight
                 {
                     FlightInstanceId = dto.FlightInstanceId,
-                    PassengerName = passengerDto.PassengerName.ToUpper(), // Viết hoa tên
+                    PassengerName = passengerDto.PassengerName.ToUpper(),
                     PassengerType = passengerDto.PassengerType,
-                    Fare = farePerPassenger
-                    // Lưu ý: Chúng ta KHÔNG chọn ghế (SeatId = null) ở bước này.
-                    // Chọn ghế là một API (bước) riêng.
+                    Fare = farePerPassenger // (Lưu giá "gốc", không "giảm")
                 });
             }
 
-            // === BƯỚC 5: LƯU VÀO DATABASE ===
-
-            // Thêm "đơn hàng mẹ" (nó sẽ tự động thêm "đơn hàng con" - BookingFlights)
+            // === BƯỚC 5: LƯU VÀO DB (Như cũ) ===
             _context.Bookings.Add(newBooking);
-
-            // Ghi tất cả thay đổi xuống DB
             await _context.SaveChangesAsync();
 
-            // === BƯỚC 6: TRẢ "BIÊN NHẬN" (DTO) VỀ ===
+            // === BƯỚC 6: GỌI "MÁY IN" XỊN (Như cũ) ===
             return await GetBookingResponseDtoById(newBooking.BookingId);
         }
 

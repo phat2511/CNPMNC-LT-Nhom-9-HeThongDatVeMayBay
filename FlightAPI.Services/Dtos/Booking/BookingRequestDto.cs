@@ -13,5 +13,7 @@ namespace FlightAPI.Services.Dtos.Booking
         [Required]
         [MinLength(1)] // Phải có ít nhất 1 hành khách
         public List<PassengerDto> Passengers { get; set; } = new List<PassengerDto>();
+
+        public string? PromotionCode { get; set; }
     }
 }

@@ -78,6 +78,9 @@ builder.Services.AddScoped<IAirlineService, AirlineService>();
 builder.Services.AddScoped<IAuthService, AuthService>(); 
 builder.Services.AddScoped<IBookedService, BookedService>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPromotionService, PromotionService>();
+builder.Services.AddScoped<IBannerService, BannerService>();
 
 
 // Add services to the container.

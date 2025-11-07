@@ -93,6 +93,12 @@ public class AuthService : IAuthService
             throw new Exception("Sai Username hoặc Password");
         }
 
+        if (user.IsLocked == true)
+        {
+            // "Vệ sĩ" "đuổi"
+            throw new Exception($"Tài khoản đã bị khóa bởi Admin. Lý do: {user.LockReason ?? "Không có lý do"}");
+        }
+
         // Lấy role từ DbContext (thay vì GetRolesAsync)
         var userWithRole = await _context.Users
                                     .Include(u => u.Role) // Tải Role
