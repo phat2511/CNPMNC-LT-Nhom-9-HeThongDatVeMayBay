@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -298,11 +302,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
+              "RelativeDocumentMoniker": "FlightAPI\\.gitignore",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
+              "RelativeToolTip": "FlightAPI\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-07T10:17:55.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\EmailService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\EmailService.cs",
@@ -314,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IEmailService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IEmailService.cs",
@@ -326,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FlightAPI.csproj",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
               "RelativeDocumentMoniker": "FlightAPI\\FlightAPI.csproj",
@@ -338,20 +355,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
               "RelativeDocumentMoniker": "FlightAPI\\appsettings.json",
               "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
               "RelativeToolTip": "FlightAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-10-23T15:49:33.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AuthService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\AuthService.cs",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AuthController.cs",
@@ -375,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Program.cs",
@@ -387,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAuthService.cs",
@@ -399,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BookedService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BookedService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\BookedService.cs",
@@ -411,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FlightManagerServiceController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\FlightManagerServiceController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\FlightManagerServiceController.cs",
@@ -423,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FlightAPI.Services.csproj",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
               "RelativeDocumentMoniker": "FlightAPI.Services\\FlightAPI.Services.csproj",
@@ -435,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "VerifyEmailRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\VerifyEmailRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\VerifyEmailRequestDto.cs",
@@ -447,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "BannerReadDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerReadDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Banner\\BannerReadDto.cs",
@@ -459,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "BannerRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
@@ -471,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "BannersController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BannersController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\BannersController.cs",
@@ -483,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IBannerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IBannerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IBannerService.cs",
@@ -495,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "BannerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BannerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\BannerService.cs",
@@ -507,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Booking.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Booking.cs",
@@ -519,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "PromotionService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\PromotionService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\PromotionService.cs",
@@ -531,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BookingRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingRequestDto.cs",
@@ -543,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "IPromotionService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IPromotionService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IPromotionService.cs",
@@ -555,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PromotionsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\PromotionsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\PromotionsController.cs",
@@ -567,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "PromotionRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Promotion\\PromotionRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Promotion\\PromotionRequestDto.cs",
@@ -579,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "PromotionReadDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Promotion\\PromotionReadDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Promotion\\PromotionReadDto.cs",
@@ -591,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\UsersController.cs",
@@ -603,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IUserService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IUserService.cs",
@@ -615,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\UserService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\UserService.cs",
@@ -627,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "UserRoleUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserRoleUpdateDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserRoleUpdateDto.cs",
@@ -639,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "UserLockRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserLockRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserLockRequestDto.cs",
@@ -651,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "UserDetailDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserDetailDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserDetailDto.cs",
@@ -663,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "HistoryPassengerDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\HistoryPassengerDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\HistoryPassengerDto.cs",
@@ -675,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "BookingHistoryDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingHistoryDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingHistoryDto.cs",
@@ -687,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AirlinesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AirlinesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AirlinesController.cs",
@@ -699,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "AddServiceRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\AddServiceRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\AddServiceRequestDto.cs",
@@ -711,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "IBookedService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IBookedService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IBookedService.cs",
@@ -723,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "BookingsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BookingsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\BookingsController.cs",
@@ -735,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "AirlineService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AirlineService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\AirlineService.cs",
@@ -747,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "FlightManagerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightManagerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\FlightManagerService.cs",
@@ -759,7 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "ServiceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\ServiceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\ServiceService.cs",
@@ -771,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "FlightInstanceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightInstanceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\FlightInstanceService.cs",
@@ -783,7 +800,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\MappingProfile.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\MappingProfile.cs",
@@ -795,7 +812,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ServiceDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Service\\ServiceDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Service\\ServiceDto.cs",
@@ -807,7 +824,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ServiceRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Service\\ServiceRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Service\\ServiceRequestDto.cs",
@@ -819,7 +836,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "ServicesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\ServicesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\ServicesController.cs",
@@ -831,7 +848,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "IServiceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IServiceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IServiceService.cs",
@@ -843,7 +860,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "PaymentResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Payment\\PaymentResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Payment\\PaymentResponseDto.cs",
@@ -855,7 +872,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "PaymentRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Payment\\PaymentRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Payment\\PaymentRequestDto.cs",
@@ -867,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "BookingFlightIdDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingFlightIdDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingFlightIdDto.cs",
@@ -879,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "IFlightInstanceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IFlightInstanceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IFlightInstanceService.cs",
@@ -891,7 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "BookingResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingResponseDto.cs",
@@ -903,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "FlightInstancesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\FlightInstancesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\FlightInstancesController.cs",
@@ -915,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "SelectSeatRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Seat\\SelectSeatRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Seat\\SelectSeatRequestDto.cs",
@@ -927,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "SeatDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Seat\\SeatDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Seat\\SeatDto.cs",
@@ -939,7 +956,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "AirportService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AirportService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\AirportService.cs",
@@ -951,7 +968,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "IFlightManagerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IFlightManagerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IFlightManagerService.cs",
@@ -963,7 +980,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "PassengerDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\PassengerDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\PassengerDto.cs",
@@ -975,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\LoginRequestDto.cs",
@@ -987,7 +1004,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Account.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Account.cs",
@@ -999,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "RegisterRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\RegisterRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\RegisterRequestDto.cs",
@@ -1011,7 +1028,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\AuthResponseDto.cs",
@@ -1023,7 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "AirCloudDbContext.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
@@ -1035,7 +1052,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Role.cs",
@@ -1047,7 +1064,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "FlightAPI.Data.csproj",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
               "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
@@ -1059,7 +1076,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "FlightInstance.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\FlightInstance.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\FlightInstance.cs",
@@ -1071,7 +1088,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "Flight.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Flight.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Flight.cs",
@@ -1083,7 +1100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "IAirlineService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAirlineService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAirlineService.cs",
@@ -1095,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "Airport.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Airport.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Airport.cs",
@@ -1107,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "AirportsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AirportsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AirportsController.cs",
@@ -1119,7 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "Airline.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Airline.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Airline.cs",
@@ -1131,7 +1148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "IAirportService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAirportService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAirportService.cs",
@@ -1143,7 +1160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "20251023155343_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Migrations\\20251023155343_InitialCreate.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Migrations\\20251023155343_InitialCreate.cs",
@@ -1155,7 +1172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "FlightAPI.Data",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
               "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",

@@ -12,10 +12,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("abbae7ff-72e5-4413-bbaf-852bd1353323")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlightAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0d59ed202156158bd9c9ad02372f2ba854a2d2b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+820dc39c0d96ae7af5717c7334433016348db7b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlightAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlightAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
