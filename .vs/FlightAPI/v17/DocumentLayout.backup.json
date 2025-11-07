@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -302,11 +302,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
               "RelativeDocumentMoniker": "FlightAPI\\.gitignore",
@@ -314,8 +314,7 @@
               "RelativeToolTip": "FlightAPI\\.gitignore",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-07T10:17:55.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T10:17:55.19Z"
             },
             {
               "$type": "Document",
@@ -355,13 +354,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
               "RelativeDocumentMoniker": "FlightAPI\\appsettings.json",
               "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
               "RelativeToolTip": "FlightAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-10-23T15:49:33.996Z",
               "EditorCaption": ""
