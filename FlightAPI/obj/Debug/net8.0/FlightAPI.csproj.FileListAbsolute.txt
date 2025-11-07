@@ -152,3 +152,10 @@ C:\Users\vt412\source\repos\FlightAPI\FlightAPI\obj\Debug\net8.0\refint\FlightAP
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\obj\Debug\net8.0\FlightAPI.pdb
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\obj\Debug\net8.0\FlightAPI.genruntimeconfig.cache
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\obj\Debug\net8.0\ref\FlightAPI.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\FubarCoder.RestSharp.Portable.Core.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\FubarCoder.RestSharp.Portable.HttpClient.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\JsonSubTypes.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\SendGrid.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\sib_api_v3_sdk.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\StarkbankEcdsa.dll

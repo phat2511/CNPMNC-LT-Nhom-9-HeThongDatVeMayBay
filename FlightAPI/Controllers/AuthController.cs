@@ -20,13 +20,28 @@ namespace FlightAPI.Controllers // Đảm bảo namespace này khớp với các
             _authService = authService;
         }
 
+        [HttpPost("verify-email")]
+        public async Task<IActionResult> VerifyEmail([FromBody] VerifyEmailRequestDto dto)
+        {
+            try
+            {
+                await _authService.VerifyEmailAsync(dto);
+                return Ok(new { message = "Xác thực email thành công. Bạn có thể đăng nhập." });
+            }
+            catch (Exception ex)
+            {
+                // (Bắt lỗi "Mã sai" hoặc "Hết hạn")
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto dto)
         {
             try
             {
-                var result = await _authService.RegisterAsync(dto);
-                return Ok(result);
+                await _authService.RegisterAsync(dto); // <--- "Não" mới sẽ "Không" trả gì
+                return Ok(new { message = "Đăng ký thành công. Vui lòng check email (hoặc console) để kích hoạt tài khoản." });
             }
             catch (Exception ex)
             {

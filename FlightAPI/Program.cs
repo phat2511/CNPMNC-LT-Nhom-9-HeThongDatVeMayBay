@@ -81,6 +81,7 @@ builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPromotionService, PromotionService>();
 builder.Services.AddScoped<IBannerService, BannerService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 // Add services to the container.

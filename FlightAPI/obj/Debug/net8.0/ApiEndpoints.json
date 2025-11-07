@@ -230,6 +230,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FlightAPI.Controllers.AuthController",
+    "Method": "VerifyEmail",
+    "RelativePath": "api/Auth/verify-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FlightAPI.Services.Dtos.Auth.VerifyEmailRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FlightAPI.Controllers.BannersController",
     "Method": "GetAllBanners",
     "RelativePath": "api/Banners",
