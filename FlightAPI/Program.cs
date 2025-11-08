@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens; // <-- Thêm cái này
 using System.Text; // <-- Thêm cái này
 using Microsoft.OpenApi.Models;
+using CloudinaryDotNet;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration; // Lấy config
@@ -26,7 +27,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 // === KHỐI BỊ THIẾU 1: CẤU HÌNH IDENTITY (Rất quan trọng) ===
 // Dòng này đăng ký UserManager, RoleManager, v.v.
 // =========================================================================
-builder.Services.AddIdentity<Account, Role>(options =>
+builder.Services.AddIdentity<FlightAPI.Data.Entities.Account, Role>(options =>
 {
     // Cấu hình Password (tùy chọn)
     options.Password.RequireDigit = true;
@@ -82,6 +83,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPromotionService, PromotionService>();
 builder.Services.AddScoped<IBannerService, BannerService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IStorageService, CloudinaryStorageService>();
 
 
 // Add services to the container.
@@ -116,6 +118,23 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+
+var cloudinarySettings = builder.Configuration.GetSection("CloudinarySettings").Get<CloudinarySettings>();
+
+if (cloudinarySettings == null || string.IsNullOrEmpty(cloudinarySettings.CloudName))
+{
+    // Đây là lỗi nếu bạn chưa set secrets
+    throw new InvalidOperationException("Cloudinary configuration missing or incomplete.");
+}
+
+// Khởi tạo Account và Cloudinary Object
+var cloudinaryAccount = new CloudinaryDotNet.Account(
+    cloudinarySettings.CloudName,
+    cloudinarySettings.ApiKey,
+    cloudinarySettings.ApiSecret
+);
+
+builder.Services.AddSingleton(new Cloudinary(cloudinaryAccount));
 
 var app = builder.Build();
 

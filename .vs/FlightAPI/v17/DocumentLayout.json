@@ -3,11 +3,47 @@
   "WorkspaceRootPath": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\controllers\\bannerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\controllers\\bannerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vt412\\AppData\\Roaming\\Microsoft\\UserSecrets\\abbae7ff-72e5-4413-bbaf-852bd1353323\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\bannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\bannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\dtos\\banner\\bannerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\dtos\\banner\\bannerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\cloudinarystorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\cloudinarystorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -22,10 +58,6 @@
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,16 +70,8 @@
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\flightapi.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\controllers\\flightmanagerservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\controllers\\flightmanagerservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\flightapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,20 +94,8 @@
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\dtos\\booking\\bookingrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\bannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\bannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\ibannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\ibannerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi\\controllers\\bannerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1951B0BF-5927-444B-8BC5-81211F513F07}|FlightAPI\\FlightAPI.csproj|solutionrelative:flightapi\\controllers\\bannerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\dtos\\banner\\bannerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\dtos\\banner\\bannerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\dtos\\banner\\bannerreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -258,10 +270,6 @@
       "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9E4B89DD-789A-429A-9326-250A4FA0A5BF}|FlightAPI.Data\\FlightAPI.Data.csproj|solutionrelative:flightapi.data\\flightapi.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|c:\\users\\vt412\\source\\repos\\flightapi\\flightapi.services\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C41F31FE-0BB6-4FF5-B2AA-6CC48138F142}|FlightAPI.Services\\FlightAPI.Services.csproj|solutionrelative:flightapi.services\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -309,24 +317,219 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "FlightAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
+              "RelativeToolTip": "FlightAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T15:49:33.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BannerRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
+              "RelativeToolTip": "FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T04:24:52.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BannersController.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BannersController.cs",
+              "RelativeDocumentMoniker": "FlightAPI\\Controllers\\BannersController.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BannersController.cs",
+              "RelativeToolTip": "FlightAPI\\Controllers\\BannersController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T04:25:06.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BannerService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BannerService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\BannerService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BannerService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\BannerService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwKYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T04:26:27.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\vt412\\AppData\\Roaming\\Microsoft\\UserSecrets\\abbae7ff-72e5-4413-bbaf-852bd1353323\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\abbae7ff-72e5-4413-bbaf-852bd1353323\\secrets.json",
               "ToolTip": "C:\\Users\\vt412\\AppData\\Roaming\\Microsoft\\UserSecrets\\abbae7ff-72e5-4413-bbaf-852bd1353323\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\abbae7ff-72e5-4413-bbaf-852bd1353323\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-07T23:48:04.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CloudinaryStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\CloudinaryStorageService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\CloudinaryStorageService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\CloudinaryStorageService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\CloudinaryStorageService.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAiwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T01:03:12.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "FlightAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
+              "RelativeDocumentMoniker": "FlightAPI\\FlightAPI.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
+              "RelativeToolTip": "FlightAPI\\FlightAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:16:53.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
+              "RelativeDocumentMoniker": "FlightAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
+              "RelativeToolTip": "FlightAPI\\Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAqwFUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:38:15.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IStorageService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\IStorageService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IStorageService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\IStorageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T01:05:24.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FlightAPI.Services.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\FlightAPI.Services.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
+              "RelativeToolTip": "FlightAPI.Services\\FlightAPI.Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:17:08.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FlightAPI.Data.csproj",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
+              "RelativeToolTip": "FlightAPI.Data\\FlightAPI.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-17T10:17:18.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AuthService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\AuthService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T16:06:29.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FlightAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T17:03:54.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IEmailService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IEmailService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T06:58:39.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "FlightAPI.Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\EmailService.cs",
+              "RelativeToolTip": "FlightAPI.Services\\EmailService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T06:59:32.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
+              "RelativeDocumentMoniker": "FlightAPI\\.gitignore",
+              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
+              "RelativeToolTip": "FlightAPI\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-07T10:17:55.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
               "RelativeDocumentMoniker": "FlightAPI\\.gitignore",
@@ -339,104 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
-              "RelativeDocumentMoniker": "FlightAPI\\.gitignore",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\.gitignore",
-              "RelativeToolTip": "FlightAPI\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-07T10:17:55.19Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\EmailService.cs",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\EmailService.cs",
-              "RelativeToolTip": "FlightAPI.Services\\EmailService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T06:59:32.382Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IEmailService.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IEmailService.cs",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\IEmailService.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IEmailService.cs",
-              "RelativeToolTip": "FlightAPI.Services\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T06:58:39.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FlightAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
-              "RelativeDocumentMoniker": "FlightAPI\\FlightAPI.csproj",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\FlightAPI.csproj",
-              "RelativeToolTip": "FlightAPI\\FlightAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-17T10:16:53.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "FlightAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\appsettings.json",
-              "RelativeToolTip": "FlightAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T15:49:33.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AuthService.cs",
-              "RelativeToolTip": "FlightAPI.Services\\AuthService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAwCIAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:06:29.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "FlightAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T17:03:54.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
-              "RelativeDocumentMoniker": "FlightAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Program.cs",
-              "RelativeToolTip": "FlightAPI\\Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAAAFMAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T10:38:15.307Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAuthService.cs",
@@ -444,11 +550,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:10:09.012Z"
+              "WhenOpened": "2025-10-30T16:10:09.012Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "BookedService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BookedService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\BookedService.cs",
@@ -456,11 +563,12 @@
               "RelativeToolTip": "FlightAPI.Services\\BookedService.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAqwEYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:45:11.914Z"
+              "WhenOpened": "2025-10-31T08:45:11.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "FlightManagerServiceController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\FlightManagerServiceController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\FlightManagerServiceController.cs",
@@ -468,23 +576,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\FlightManagerServiceController.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAcwGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:50:53.639Z"
+              "WhenOpened": "2025-10-23T16:50:53.639Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FlightAPI.Services.csproj",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\FlightAPI.Services.csproj",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightAPI.Services.csproj",
-              "RelativeToolTip": "FlightAPI.Services\\FlightAPI.Services.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-17T10:17:08.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "VerifyEmailRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\VerifyEmailRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\VerifyEmailRequestDto.cs",
@@ -492,11 +589,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Auth\\VerifyEmailRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T05:57:02.576Z"
+              "WhenOpened": "2025-11-07T05:57:02.576Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "BannerReadDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerReadDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Banner\\BannerReadDto.cs",
@@ -504,35 +602,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Banner\\BannerReadDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:24:39.002Z"
+              "WhenOpened": "2025-11-07T04:24:39.002Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BannerRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
-              "RelativeToolTip": "FlightAPI.Services\\Dtos\\Banner\\BannerRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:24:52.517Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BannersController.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BannersController.cs",
-              "RelativeDocumentMoniker": "FlightAPI\\Controllers\\BannersController.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BannersController.cs",
-              "RelativeToolTip": "FlightAPI\\Controllers\\BannersController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAiwEoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:25:06.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "IBannerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IBannerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IBannerService.cs",
@@ -540,23 +615,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IBannerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:25:26.24Z"
+              "WhenOpened": "2025-11-07T04:25:26.24Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BannerService.cs",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BannerService.cs",
-              "RelativeDocumentMoniker": "FlightAPI.Services\\BannerService.cs",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\BannerService.cs",
-              "RelativeToolTip": "FlightAPI.Services\\BannerService.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwDQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:26:27.976Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "Booking.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Booking.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Booking.cs",
@@ -564,11 +628,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Booking.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:32:25.935Z"
+              "WhenOpened": "2025-11-07T04:32:25.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "PromotionService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\PromotionService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\PromotionService.cs",
@@ -576,11 +641,12 @@
               "RelativeToolTip": "FlightAPI.Services\\PromotionService.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAmwDgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:16:25.276Z"
+              "WhenOpened": "2025-11-07T04:16:25.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "BookingRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingRequestDto.cs",
@@ -588,11 +654,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\BookingRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:49:04.02Z"
+              "WhenOpened": "2025-10-31T08:49:04.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "IPromotionService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IPromotionService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IPromotionService.cs",
@@ -600,11 +667,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IPromotionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:15:11.335Z"
+              "WhenOpened": "2025-11-07T04:15:11.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "PromotionsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\PromotionsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\PromotionsController.cs",
@@ -612,11 +680,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\PromotionsController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAiwFIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:13:06.882Z"
+              "WhenOpened": "2025-11-07T04:13:06.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "PromotionRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Promotion\\PromotionRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Promotion\\PromotionRequestDto.cs",
@@ -624,11 +693,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Promotion\\PromotionRequestDto.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAiwDkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:12:48.386Z"
+              "WhenOpened": "2025-11-07T04:12:48.386Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "PromotionReadDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Promotion\\PromotionReadDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Promotion\\PromotionReadDto.cs",
@@ -636,11 +706,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Promotion\\PromotionReadDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:12:37.314Z"
+              "WhenOpened": "2025-11-07T04:12:37.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\UsersController.cs",
@@ -648,11 +719,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\UsersController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAiwDkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:14:55.54Z"
+              "WhenOpened": "2025-11-07T03:14:55.54Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IUserService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IUserService.cs",
@@ -660,11 +732,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:15:27.386Z"
+              "WhenOpened": "2025-11-07T03:15:27.386Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\UserService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\UserService.cs",
@@ -672,11 +745,12 @@
               "RelativeToolTip": "FlightAPI.Services\\UserService.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAiwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:17:56.713Z"
+              "WhenOpened": "2025-11-07T03:17:56.713Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "UserRoleUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserRoleUpdateDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserRoleUpdateDto.cs",
@@ -684,11 +758,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\User\\UserRoleUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:14:37.832Z"
+              "WhenOpened": "2025-11-07T03:14:37.832Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "UserLockRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserLockRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserLockRequestDto.cs",
@@ -696,11 +771,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\User\\UserLockRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:14:25.139Z"
+              "WhenOpened": "2025-11-07T03:14:25.139Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "UserDetailDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\User\\UserDetailDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\User\\UserDetailDto.cs",
@@ -708,11 +784,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\User\\UserDetailDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T03:13:57.192Z"
+              "WhenOpened": "2025-11-07T03:13:57.192Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "HistoryPassengerDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\HistoryPassengerDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\HistoryPassengerDto.cs",
@@ -720,11 +797,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\HistoryPassengerDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T01:54:53.769Z"
+              "WhenOpened": "2025-11-07T01:54:53.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "BookingHistoryDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingHistoryDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingHistoryDto.cs",
@@ -732,11 +810,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\BookingHistoryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T01:55:03.346Z"
+              "WhenOpened": "2025-11-07T01:55:03.346Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "AirlinesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AirlinesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AirlinesController.cs",
@@ -744,11 +823,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\AirlinesController.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAcwHYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T00:49:43.888Z"
+              "WhenOpened": "2025-10-24T00:49:43.888Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "AddServiceRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\AddServiceRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\AddServiceRequestDto.cs",
@@ -756,11 +836,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\AddServiceRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T02:05:35.952Z"
+              "WhenOpened": "2025-11-07T02:05:35.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "IBookedService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IBookedService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IBookedService.cs",
@@ -768,11 +849,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IBookedService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:53:01.826Z"
+              "WhenOpened": "2025-10-31T08:53:01.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "BookingsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\BookingsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\BookingsController.cs",
@@ -780,11 +862,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\BookingsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:52:33.505Z"
+              "WhenOpened": "2025-10-31T08:52:33.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "AirlineService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AirlineService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\AirlineService.cs",
@@ -792,11 +875,12 @@
               "RelativeToolTip": "FlightAPI.Services\\AirlineService.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAUwFYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T00:49:16.863Z"
+              "WhenOpened": "2025-10-24T00:49:16.863Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "FlightManagerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightManagerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\FlightManagerService.cs",
@@ -804,11 +888,12 @@
               "RelativeToolTip": "FlightAPI.Services\\FlightManagerService.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAUwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:50:28.056Z"
+              "WhenOpened": "2025-10-23T16:50:28.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "ServiceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\ServiceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\ServiceService.cs",
@@ -816,11 +901,12 @@
               "RelativeToolTip": "FlightAPI.Services\\ServiceService.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAswGYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T04:30:41.158Z"
+              "WhenOpened": "2025-11-01T04:30:41.158Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "FlightInstanceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\FlightInstanceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\FlightInstanceService.cs",
@@ -828,11 +914,12 @@
               "RelativeToolTip": "FlightAPI.Services\\FlightInstanceService.cs",
               "ViewState": "AgIAALEAAAAAAAAAAAAiwNQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:26:18.739Z"
+              "WhenOpened": "2025-10-23T16:26:18.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\MappingProfile.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\MappingProfile.cs",
@@ -840,11 +927,12 @@
               "RelativeToolTip": "FlightAPI.Services\\MappingProfile.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:01:02.467Z"
+              "WhenOpened": "2025-10-23T16:01:02.467Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "ServiceDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Service\\ServiceDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Service\\ServiceDto.cs",
@@ -852,11 +940,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Service\\ServiceDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T04:26:34.594Z"
+              "WhenOpened": "2025-11-01T04:26:34.594Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "ServiceRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Service\\ServiceRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Service\\ServiceRequestDto.cs",
@@ -864,11 +953,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Service\\ServiceRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T04:27:00.927Z"
+              "WhenOpened": "2025-11-01T04:27:00.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "ServicesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\ServicesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\ServicesController.cs",
@@ -876,11 +966,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\ServicesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T04:27:28.443Z"
+              "WhenOpened": "2025-11-01T04:27:28.443Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "IServiceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IServiceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IServiceService.cs",
@@ -888,11 +979,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IServiceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T04:28:22.242Z"
+              "WhenOpened": "2025-11-01T04:28:22.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "PaymentResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Payment\\PaymentResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Payment\\PaymentResponseDto.cs",
@@ -900,11 +992,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Payment\\PaymentResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T14:19:51.012Z"
+              "WhenOpened": "2025-10-31T14:19:51.012Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "PaymentRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Payment\\PaymentRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Payment\\PaymentRequestDto.cs",
@@ -912,11 +1005,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Payment\\PaymentRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T14:19:37.736Z"
+              "WhenOpened": "2025-10-31T14:19:37.736Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "BookingFlightIdDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingFlightIdDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingFlightIdDto.cs",
@@ -924,11 +1018,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\BookingFlightIdDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T14:09:04.907Z"
+              "WhenOpened": "2025-10-31T14:09:04.907Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "IFlightInstanceService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IFlightInstanceService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IFlightInstanceService.cs",
@@ -936,11 +1031,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IFlightInstanceService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:25:45.233Z"
+              "WhenOpened": "2025-10-23T16:25:45.233Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "BookingResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\BookingResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\BookingResponseDto.cs",
@@ -948,11 +1044,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\BookingResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:49:18.319Z"
+              "WhenOpened": "2025-10-31T08:49:18.319Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "FlightInstancesController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\FlightInstancesController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\FlightInstancesController.cs",
@@ -960,11 +1057,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\FlightInstancesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:39:38.242Z"
+              "WhenOpened": "2025-10-31T13:39:38.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "SelectSeatRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Seat\\SelectSeatRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Seat\\SelectSeatRequestDto.cs",
@@ -972,11 +1070,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Seat\\SelectSeatRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:37:10.86Z"
+              "WhenOpened": "2025-10-31T13:37:10.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "SeatDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Seat\\SeatDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Seat\\SeatDto.cs",
@@ -984,11 +1083,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Seat\\SeatDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:36:42.525Z"
+              "WhenOpened": "2025-10-31T13:36:42.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "AirportService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\AirportService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\AirportService.cs",
@@ -996,11 +1096,12 @@
               "RelativeToolTip": "FlightAPI.Services\\AirportService.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAkwDoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:02:14.482Z"
+              "WhenOpened": "2025-10-23T16:02:14.482Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "IFlightManagerService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IFlightManagerService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IFlightManagerService.cs",
@@ -1008,11 +1109,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IFlightManagerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:50:07.18Z"
+              "WhenOpened": "2025-10-23T16:50:07.18Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "PassengerDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Booking\\PassengerDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Booking\\PassengerDto.cs",
@@ -1020,11 +1122,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Booking\\PassengerDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T08:48:50.96Z"
+              "WhenOpened": "2025-10-31T08:48:50.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\LoginRequestDto.cs",
@@ -1032,11 +1135,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Auth\\LoginRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:14:36.555Z"
+              "WhenOpened": "2025-10-30T16:14:36.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Account.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Account.cs",
@@ -1044,11 +1148,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T15:44:56.81Z"
+              "WhenOpened": "2025-10-23T15:44:56.81Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "RegisterRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\RegisterRequestDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\RegisterRequestDto.cs",
@@ -1056,11 +1161,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Auth\\RegisterRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:14:21.182Z"
+              "WhenOpened": "2025-10-30T16:14:21.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\Dtos\\Auth\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\Dtos\\Auth\\AuthResponseDto.cs",
@@ -1068,11 +1174,12 @@
               "RelativeToolTip": "FlightAPI.Services\\Dtos\\Auth\\AuthResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:15:15.838Z"
+              "WhenOpened": "2025-10-30T16:15:15.838Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "AirCloudDbContext.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
@@ -1080,11 +1187,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\AirCloudDbContext.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAiwHgAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T10:35:02.823Z"
+              "WhenOpened": "2025-10-17T10:35:02.823Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Role.cs",
@@ -1092,23 +1200,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T15:43:47.818Z"
+              "WhenOpened": "2025-10-30T15:43:47.818Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "FlightAPI.Data.csproj",
-              "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
-              "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
-              "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
-              "RelativeToolTip": "FlightAPI.Data\\FlightAPI.Data.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-17T10:17:18.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "FlightInstance.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\FlightInstance.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\FlightInstance.cs",
@@ -1116,11 +1213,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\FlightInstance.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T02:55:55.167Z"
+              "WhenOpened": "2025-10-24T02:55:55.167Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "Flight.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Flight.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Flight.cs",
@@ -1128,11 +1226,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Flight.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T17:42:53.797Z"
+              "WhenOpened": "2025-10-23T17:42:53.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "IAirlineService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAirlineService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAirlineService.cs",
@@ -1140,11 +1239,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IAirlineService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T00:48:49.336Z"
+              "WhenOpened": "2025-10-24T00:48:49.336Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "Airport.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Airport.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Airport.cs",
@@ -1152,11 +1252,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Airport.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:06:16.595Z"
+              "WhenOpened": "2025-10-23T16:06:16.595Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "AirportsController.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI\\Controllers\\AirportsController.cs",
               "RelativeDocumentMoniker": "FlightAPI\\Controllers\\AirportsController.cs",
@@ -1164,11 +1265,12 @@
               "RelativeToolTip": "FlightAPI\\Controllers\\AirportsController.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:17:48.953Z"
+              "WhenOpened": "2025-10-23T16:17:48.953Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "Airline.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Entities\\Airline.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Entities\\Airline.cs",
@@ -1176,11 +1278,12 @@
               "RelativeToolTip": "FlightAPI.Data\\Entities\\Airline.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T01:42:48.96Z"
+              "WhenOpened": "2025-10-24T01:42:48.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "IAirportService.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Services\\IAirportService.cs",
               "RelativeDocumentMoniker": "FlightAPI.Services\\IAirportService.cs",
@@ -1188,11 +1291,12 @@
               "RelativeToolTip": "FlightAPI.Services\\IAirportService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T16:02:00.415Z"
+              "WhenOpened": "2025-10-23T16:02:00.415Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "20251023155343_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\Migrations\\20251023155343_InitialCreate.cs",
               "RelativeDocumentMoniker": "FlightAPI.Data\\Migrations\\20251023155343_InitialCreate.cs",
@@ -1200,18 +1304,20 @@
               "RelativeToolTip": "FlightAPI.Data\\Migrations\\20251023155343_InitialCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T15:53:43.508Z"
+              "WhenOpened": "2025-10-23T15:53:43.508Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "FlightAPI.Data",
               "DocumentMoniker": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
               "RelativeDocumentMoniker": "FlightAPI.Data\\FlightAPI.Data.csproj",
               "ToolTip": "C:\\Users\\vt412\\source\\repos\\FlightAPI\\FlightAPI.Data\\FlightAPI.Data.csproj",
               "RelativeToolTip": "FlightAPI.Data\\FlightAPI.Data.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-17T10:31:56.382Z"
+              "WhenOpened": "2025-10-17T10:31:56.382Z",
+              "EditorCaption": ""
             }
           ]
         }

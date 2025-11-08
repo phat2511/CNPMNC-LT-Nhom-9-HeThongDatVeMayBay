@@ -159,3 +159,6 @@ C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\Newtonsoft.Json
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\SendGrid.dll
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\sib_api_v3_sdk.dll
 C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\StarkbankEcdsa.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\AWSSDK.S3.dll
+C:\Users\vt412\source\repos\FlightAPI\FlightAPI\bin\Debug\net8.0\CloudinaryDotNet.dll

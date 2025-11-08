@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace FlightAPI.Services.Dtos.Banner
 {
@@ -8,9 +9,8 @@ namespace FlightAPI.Services.Dtos.Banner
         [StringLength(150)]
         public string Title { get; set; } = null!;
 
-        [Required]
-        [StringLength(255)]
-        public string ImageUrl { get; set; } = null!; // "/images/sale-he.jpg"
+        [Required(ErrorMessage = "Vui lòng chọn file ảnh.")]
+        public IFormFile File { get; set; } = null!;
 
         [StringLength(255)]
         public string? LinkUrl { get; set; } // "/search?code=SALE10"

@@ -11,6 +11,7 @@ namespace FlightAPI.Controllers
     public class BannersController : ControllerBase
     {
         private readonly IBannerService _bannerService;
+        
 
         public BannersController(IBannerService bannerService)
         {
@@ -35,11 +36,34 @@ namespace FlightAPI.Controllers
         }
 
         // 3. POST (Create)
+        // (Trong BannersController.cs)
         [HttpPost]
-        public async Task<IActionResult> CreateBanner([FromBody] BannerRequestDto dto)
+        // SỬA LỖI: Dùng [FromForm] để nhận file và dữ liệu form
+        public async Task<IActionResult> CreateBanner([FromForm] BannerRequestDto dto)
         {
-            var newBanner = await _bannerService.CreateAsync(dto);
-            return CreatedAtAction(nameof(GetBannerById), new { id = newBanner.BannerId }, newBanner);
+            // Kiểm tra tính hợp lệ của Model trước khi xử lý
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Kiểm tra file (giữ nguyên logic của bạn)
+            if (dto.File == null || dto.File.Length == 0)
+            {
+                return BadRequest(new { message = "Vui lòng chọn file ảnh hợp lệ." });
+            }
+
+            try
+            {
+                var newBanner = await _bannerService.CreateAsync(dto);
+                // Trả về 201 Created và thông tin Banner
+                return CreatedAtAction(nameof(GetBannerById), new { id = newBanner.BannerId }, newBanner);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi trong quá trình Service (ví dụ: lỗi upload Cloudinary)
+                return StatusCode(500, new { message = "Lỗi tạo banner: " + ex.Message });
+            }
         }
 
         // 4. PUT (Update)
@@ -48,6 +72,11 @@ namespace FlightAPI.Controllers
         {
             try
             {
+                if (dto.File != null && dto.File.Length == 0)
+                {
+                    return BadRequest(new { message = "File ảnh không hợp lệ." });
+                }
+
                 var updatedBanner = await _bannerService.UpdateAsync(id, dto);
                 return Ok(updatedBanner);
             }

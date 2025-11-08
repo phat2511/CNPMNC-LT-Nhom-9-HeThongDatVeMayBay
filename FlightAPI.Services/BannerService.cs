@@ -1,27 +1,30 @@
-﻿using FlightAPI.Data; // Cho DbContext
-using FlightAPI.Data.Entities; // Cho Banner (Entity)
-using FlightAPI.Services.Dtos.Banner; // Cho DTOs
-using Microsoft.EntityFrameworkCore; // Cho .Include() và .ToListAsync()
-using System.Linq; // Cho .Select()
+﻿using FlightAPI.Data;
+using FlightAPI.Data.Entities;
+using FlightAPI.Services.Dtos.Banner;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.IO; // Cần thiết cho Stream
 
 namespace FlightAPI.Services
 {
-    // Nó "thề" (implement) 5 "hợp đồng" CRUD
     public class BannerService : IBannerService
     {
         private readonly AirCloudDbContext _context;
+        // === SỬA LỖI 1: KHAI BÁO FIELD VÀ INJECT SERVICE ===
+        private readonly IStorageService _storageService;
 
-        public BannerService(AirCloudDbContext context)
+        // SỬA LỖI 1: Thêm IStorageService vào Constructor
+        public BannerService(AirCloudDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
 
-        // 1. "Đọc" (READ All)
+        // 1. "Đọc" (READ All) - (Giữ nguyên)
         public async Task<IEnumerable<BannerReadDto>> GetAllAsync()
         {
             return await _context.Banners
                 .AsNoTracking()
-                // "Tham lam": Vớ (JOIN) luôn "Deal" (Promotion)
                 .Include(b => b.Promotion)
                 .Select(b => new BannerReadDto
                 {
@@ -31,17 +34,16 @@ namespace FlightAPI.Services
                     LinkUrl = b.LinkUrl,
                     IsActive = (bool)b.IsActive,
                     PromotionId = b.PromotionId,
-                    // "In" tên "Deal" (nếu có)
                     PromotionDescription = b.Promotion != null ? b.Promotion.Description : null
                 })
                 .ToListAsync();
         }
 
-        // 2. "Đọc" (READ One)
+        // 2. "Đọc" (READ One) - (Giữ nguyên)
         public async Task<BannerReadDto?> GetByIdAsync(int id)
         {
             var b = await _context.Banners
-                .Include(b => b.Promotion) // Vớ "Deal"
+                .Include(b => b.Promotion)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.BannerId == id);
 
@@ -62,27 +64,35 @@ namespace FlightAPI.Services
         // 3. "Tạo" (CREATE)
         public async Task<BannerReadDto> CreateAsync(BannerRequestDto dto)
         {
-            // (Sếp có 1 cột 'CreatedBy' (int?) trong DB mà "bỏ quên" trong DTO.
-            //  Nếu sếp muốn "xịn", sếp phải truyền 'accountId' vào hàm này
-            //  và gán: CreatedBy = accountId. 
-            //  Giờ, ta "lờ" nó đi cho "nhanh".)
+            string imageUrl = null!;
 
-            var newBanner = new Banner
+            // 1. UPLOAD FILE
+            using (var stream = dto.File.OpenReadStream())
+            {
+                imageUrl = await _storageService.UploadFileAsync(
+                    stream,
+                    dto.File.FileName,
+                    dto.File.ContentType
+                );
+            }
+
+            // 2. TẠO ENTITY (Đã sửa lỗi trùng lặp và sử dụng imageUrl đã upload)
+            var newBannerEntity = new Banner
             {
                 Title = dto.Title,
-                ImageUrl = dto.ImageUrl,
+                ImageUrl = imageUrl, // <--- LƯU URL TỪ CLOUDINARY
                 LinkUrl = dto.LinkUrl,
-                StartDate = dto.StartDate ?? DateTime.UtcNow, // Nếu null, lấy giờ hiện tại
+                StartDate = dto.StartDate ?? DateTime.UtcNow,
                 EndDate = dto.EndDate,
                 IsActive = dto.IsActive,
                 PromotionId = dto.PromotionId
             };
 
-            _context.Banners.Add(newBanner);
+            _context.Banners.Add(newBannerEntity);
             await _context.SaveChangesAsync();
 
-            // Trả về "biên nhận" (DTO)
-            return (await GetByIdAsync(newBanner.BannerId))!; // Gọi "máy in" xịn
+            // 3. Trả về "biên nhận"
+            return (await GetByIdAsync(newBannerEntity.BannerId))!;
         }
 
         // 4. "Sửa" (UPDATE)
@@ -94,14 +104,41 @@ namespace FlightAPI.Services
                 throw new KeyNotFoundException("Không tìm thấy banner.");
             }
 
-            // "Đập" (Update) "hàng"
-            banner.Title = dto.Title;
-            banner.ImageUrl = dto.ImageUrl;
-            banner.LinkUrl = dto.LinkUrl;
+            string newImageUrl = banner.ImageUrl; // Giữ nguyên URL cũ nếu không có file mới
+
+            // NẾU CÓ FILE MỚI ĐƯỢC GỬI LÊN
+            if (dto.File != null && dto.File.Length > 0)
+            {
+                // 1. Xóa file cũ khỏi Cloudinary
+                if (!string.IsNullOrEmpty(banner.ImageUrl))
+                {
+                    await _storageService.DeleteFileAsync(banner.ImageUrl);
+                }
+
+                // 2. Upload file mới
+                using (var stream = dto.File.OpenReadStream())
+                {
+                    newImageUrl = await _storageService.UploadFileAsync(
+                        stream, dto.File.FileName, dto.File.ContentType
+                    );
+                }
+            }
+
+            // 3. CẬP NHẬT ENTITY VỚI LOGIC PATCH (chỉ update trường được gửi)
+            if (!string.IsNullOrEmpty(dto.Title)) banner.Title = dto.Title;
+            if (!string.IsNullOrEmpty(dto.LinkUrl)) banner.LinkUrl = dto.LinkUrl;
+
+            // Cập nhật URL (dùng URL mới nếu đã upload, hoặc giữ nguyên URL cũ)
+            banner.ImageUrl = newImageUrl;
+
+            // Cập nhật các trường nullable khác
             banner.StartDate = dto.StartDate ?? banner.StartDate;
             banner.EndDate = dto.EndDate;
-            banner.IsActive = dto.IsActive;
+
+            // Cập nhật các trường không nullable/bool
+            banner.IsActive = dto.IsActive; // (Giả định DTO được sửa thành bool? hoặc bạn đang dùng logic PATCH đơn giản)
             banner.PromotionId = dto.PromotionId;
+
 
             await _context.SaveChangesAsync();
 
@@ -115,6 +152,12 @@ namespace FlightAPI.Services
             if (banner == null)
             {
                 throw new KeyNotFoundException("Không tìm thấy banner.");
+            }
+
+            // === XÓA FILE TRƯỚC ===
+            if (!string.IsNullOrEmpty(banner.ImageUrl))
+            {
+                await _storageService.DeleteFileAsync(banner.ImageUrl);
             }
 
             _context.Banners.Remove(banner);
