@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model AirCloud_DA.Pages.Admin.Banners.DeleteModel
+@{
+    ViewData["Title"] = "Xác nhận xóa Banner";
+}
+
+<div class="container-xxl py-3">
+    <h2 class="mb-3 text-danger">Xác nhận xóa Banner</h2>
+
+    <div class="alert alert-warning" role="alert">
+        Bạn có chắc chắn muốn xóa banner <strong>"@Model.Banner.Title"</strong> không? Thao tác này không thể hoàn tác.
+    </div>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Banner.BannerId</dd>
+
+        <dt class="col-sm-3">Tiêu đề</dt>
+        <dd class="col-sm-9">@Model.Banner.Title</dd>
+
+        <dt class="col-sm-3">Hình ảnh</dt>
+        <dd class="col-sm-9">
+            @if (!string.IsNullOrEmpty(Model.Banner.ImageUrl))
+            {
+                <img src="@Model.Banner.ImageUrl" style="width:150px;height:90px;object-fit:cover" class="rounded" />
+            }
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Banner.BannerId" />
+
+        <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-danger">Xóa</button>
+            <a asp-page="Index" class="btn btn-outline-secondary">Hủy</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,120 @@
+@page
+@model AirCloud_DA.Pages.Admin.Reports.RevenueModel
+@{
+    ViewData["Title"] = "Báo cáo doanh thu";
+}
+<div class="container-xxl py-3">
+    <h2 class="mb-3 --heading">Báo cáo doanh thu</h2>
+
+    <form method="get" class="row g-3 mb-3 --toolbar">
+        <div class="col-sm-3">
+            <label class="form-label">Từ ngày</label>
+            <input type="date" class="form-control" asp-for="From" />
+        </div>
+        <div class="col-sm-3">
+            <label class="form-label">Đến ngày</label>
+            <input type="date" class="form-control" asp-for="To" />
+        </div>
+        <div class="col-sm-3">
+            <label class="form-label">Kỳ báo cáo</label>
+            <select class="form-select" asp-for="Period">
+                <option value="Day">Ngày</option>
+                <option value="Week">Tuần</option>
+                <option value="Month">Tháng</option>
+            </select>
+        </div>
+        <div class="col-sm-3 d-flex align-items-end gap-2">
+            <button class="btn btn-primary" type="submit">Xem báo cáo</button>
+            <button class="btn btn-outline-primary" type="button" id="btnExportPdf"><i class="bi bi-filetype-pdf me-1"></i>PDF</button>
+            <button class="btn btn-outline-secondary" type="button" id="btnExportCsv"><i class="bi bi-filetype-csv me-1"></i>CSV</button>
+        </div>
+    </form>
+
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">Tổng doanh thu</div>
+                    <div class="h4">@Model.Summary.TotalRevenue.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">Số đơn</div>
+                    <div class="h4">@Model.Summary.TotalBookings</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">Giá trị TB</div>
+                    <div class="h4">@Model.Summary.AverageOrderValue.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-muted small">Trạng thái</div>
+                    <div>Đã xác nhận: <strong>@Model.Summary.ConfirmedBookings</strong></div>
+                    <div>Đang chờ: <strong>@Model.Summary.PendingBookings</strong></div>
+                    <div>Hủy: <strong>@Model.Summary.CancelledBookings</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-3 --table-wrap">
+        <table class="table align-middle">
+            <thead>
+                <tr><th>Kỳ</th><th class="text-end">Doanh thu</th><th class="text-end">Số đơn</th><th class="text-end">Giá trị TB</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var r in Model.Series)
+                {
+                    <tr>
+                        <td>
+                            @if (Model.Period == "Day") { @r.Date.ToString("dd/MM/yyyy") }
+                            else if (Model.Period == "Week") { @( $"Tuần {System.Globalization.ISOWeek.GetWeekOfYear(r.Date)}, {r.Date:yyyy}" ) }
+                            else { @r.Date.ToString("MM/yyyy") }
+                        </td>
+                        <td class="text-end">@r.TotalRevenue.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
+                        <td class="text-end">@r.TotalBookings</td>
+                        <td class="text-end">@r.AverageOrderValue.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            const fromEl = document.querySelector('input[name="From"]');
+            const toEl = document.querySelector('input[name="To"]');
+            const periodEl = document.querySelector('select[name="Period"]');
+
+            function buildUrl(handler) {
+                const fromVal = (fromEl?.value || '').trim();
+                const toVal = (toEl?.value || '').trim();
+                const periodVal = (periodEl?.value || 'Day').trim();
+                const params = new URLSearchParams();
+                if (fromVal) params.set('From', fromVal);
+                if (toVal) params.set('To', toVal);
+                params.set('Period', periodVal || 'Day');
+                return `?handler=${handler}&${params.toString()}`;
+            }
+
+            document.getElementById('btnExportPdf')?.addEventListener('click', function () {
+                window.location.href = buildUrl('ExportPdf');
+            });
+            document.getElementById('btnExportCsv')?.addEventListener('click', function () {
+                window.location.href = buildUrl('ExportCsv');
+            });
+        })();
+    </script>
+}

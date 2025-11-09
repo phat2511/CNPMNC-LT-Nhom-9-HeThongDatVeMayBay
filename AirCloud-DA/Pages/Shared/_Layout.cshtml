@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6C63FF" />
+    <title>@ViewData["Title"] - AirCloud_DA</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm sticky-top">
+            <div class="container-xxl">
+                <a class="navbar-brand fw-bold text-primary" asp-area="" asp-page="/Index">
+                    <i class="bi bi-clouds me-1"></i>AirCloud
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="mainNav" class="navbar-collapse collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                        <li class="nav-item"><a class="nav-link" asp-page="/Index">Vé máy bay</a></li>
+                        <li class="nav-item"><a class="nav-link disabled" tabindex="-1" aria-disabled="true">Khách sạn</a></li>
+                        <li class="nav-item"><a class="nav-link disabled" tabindex="-1" aria-disabled="true">Đơn hàng</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-page="/Promotions/Index">Ưu đãi</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-page="/Reviews/Index">Đánh giá</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                <li><a class="dropdown-item" asp-page="/Admin/Banners/Index">Banners</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Promotions/Index">Mã ưu đãi</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Reviews/Index">Đánh giá</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Reports/Revenue">Báo cáo doanh thu</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav align-items-sm-center gap-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                VND
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="currencyDropdown">
+                                <li><a class="dropdown-item" href="#">VND - ₫</a></li>
+                                <li><a class="dropdown-item" href="#">USD - $</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-life-preserver me-1"></i>Hỗ trợ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="Giỏ"><i class="bi bi-cart3"></i></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Đăng nhập/Đăng kí</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-xxl">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="mt-5 py-4 bg-light border-top">
+        <div class="container-xxl d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div class="text-muted">&copy; 2025 - AirCloud_DA</div>
+            <div class="d-flex gap-3">
+                <a class="text-decoration-none" asp-area="" asp-page="/Privacy">Privacy</a>
+                <a class="text-decoration-none" href="#">Terms</a>
+                <a class="text-decoration-none" href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

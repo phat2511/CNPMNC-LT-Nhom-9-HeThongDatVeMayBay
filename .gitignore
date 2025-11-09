@@ -1,0 +1,11 @@
+# Bỏ qua thư mục tạm thời của Visual Studio
+.vs/
+
+# Bỏ qua thư mục build
+[Bb]in/
+[Oo]bj/
+
+# Bỏ qua các tệp người dùng và cài đặt
+*.suo
+*.user
+*.bak

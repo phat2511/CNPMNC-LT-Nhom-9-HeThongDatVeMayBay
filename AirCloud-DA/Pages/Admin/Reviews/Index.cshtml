@@ -1,0 +1,222 @@
+@page
+@model AirCloud_DA.Pages.Admin.Reviews.IndexModel
+@using System.Text.RegularExpressions
+@using AirCloud_DA.Data
+@{
+    ViewData["Title"] = "Quản lý đánh giá";
+
+    // Helper function để parse rating
+    int ParseRating(SupportTicket review)
+    {
+        // Parse từ Content
+        if (review.Content != null)
+        {
+            var contentMatch = Regex.Match(review.Content, @"\[Đánh giá:\s*(\d+)/5\s*sao\]");
+            if (contentMatch.Success && contentMatch.Groups.Count > 1)
+            {
+                if (int.TryParse(contentMatch.Groups[1].Value, out int rating))
+                {
+                    return rating;
+                }
+            }
+        }
+
+        // Parse từ Subject
+        if (review.Subject != null)
+        {
+            var subjectMatch = Regex.Match(review.Subject, @"Đánh giá\s+(\d+)\s+sao");
+            if (subjectMatch.Success && subjectMatch.Groups.Count > 1)
+            {
+                if (int.TryParse(subjectMatch.Groups[1].Value, out int rating))
+                {
+                    return rating;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+    // Helper function để lấy display subject
+    string GetDisplaySubject(SupportTicket review)
+    {
+        string displaySubject = review.Subject ?? "";
+        if (displaySubject.StartsWith("Đánh giá "))
+        {
+            var prefixMatch = Regex.Match(displaySubject, @"^Đánh giá\s+\d+\s+sao\s*-\s*");
+            if (prefixMatch.Success)
+            {
+                displaySubject = displaySubject.Substring(prefixMatch.Length).Trim();
+            }
+        }
+        return displaySubject;
+    }
+
+    // Helper function để lấy display content
+    string GetDisplayContent(SupportTicket review, int maxLength = 100)
+    {
+        string displayContent = review.Content ?? "";
+        if (!string.IsNullOrEmpty(displayContent))
+        {
+            var contentPrefixMatch = Regex.Match(displayContent, @"^\[Đánh giá:\s*\d+/5\s*sao\]\s*[\r\n]+");
+            if (contentPrefixMatch.Success)
+            {
+                displayContent = displayContent.Substring(contentPrefixMatch.Length).Trim();
+            }
+        }
+
+        if (displayContent.Length > maxLength)
+        {
+            displayContent = displayContent.Substring(0, maxLength) + "...";
+        }
+
+        return displayContent;
+    }
+
+    // Helper function để lấy status info
+    (string badgeClass, string statusText) GetStatusInfo(SupportTicket review)
+    {
+        string status = review.Status ?? "Open";
+        return status switch
+        {
+            "Resolved" => ("bg-success", "Đã duyệt"),
+            "Rejected" => ("bg-danger", "Đã từ chối"),
+            _ => ("bg-warning", "Chờ duyệt")
+        };
+    }
+}
+
+<div class="container-xxl py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0 --heading">Quản lý đánh giá</h2>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @* Thống kê rút gọn *@
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2">Tổng số</h6>
+                    <h3 class="card-title">@Model.Reviews.Count</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Filter và Search *@
+    <div class="card mb-4 --toolbar">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-10">
+                    <label class="form-label">Tìm kiếm</label>
+                    <input type="text" class="form-control" name="searchTerm"
+                           value="@Model.SearchTerm" placeholder="Tìm theo tiêu đề hoặc nội dung...">
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">Tìm kiếm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @* Danh sách đánh giá *@
+    @if (Model.Reviews.Any())
+    {
+        <div class="table-responsive --table-wrap">
+            @{ var i = 0; }
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>STT</th>
+                        <th>Đánh giá</th>
+                        <th>Tiêu đề</th>
+                        <th>Nội dung</th>
+                        <th>Khách hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày tạo</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var review in Model.Reviews)
+                    {
+                        var stt = ++i;
+                        var reviewRating = ParseRating(review);
+                        var displaySubject = GetDisplaySubject(review);
+                        var displayContent = GetDisplayContent(review);
+                        var (badgeClass, statusText) = GetStatusInfo(review);
+
+                        <tr>
+                            <td>@stt</td>
+                            <td>
+                                <div class="d-flex">
+                                    @for (int j = 1; j <= 5; j++)
+                                    {
+                                        <i class="bi bi-star-fill @(j <= reviewRating ? "text-warning" : "text-muted")" style="font-size: 1rem;"></i>
+                                    }
+                                    <span class="ms-2 small text-muted">(@reviewRating/5)</span>
+                                </div>
+                            </td>
+                            <td>
+                                <strong>@displaySubject</strong>
+                            </td>
+                            <td>
+                                <div style="max-width: 300px;">
+                                    @displayContent
+                                </div>
+                            </td>
+                            <td>
+                                @(review.Account?.FullName ?? "Khách hàng")
+                            </td>
+                            <td>
+                                <span class="badge @badgeClass">@statusText</span>
+                            </td>
+                            <td>@review.CreatedAt?.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <form method="post" asp-page-handler="Delete" class="d-inline">
+                                        <input type="hidden" name="id" value="@review.TicketId" />
+                                        <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Bạn có chắc chắn muốn xóa đánh giá này? Hành động này không thể hoàn tác!')">
+                                            <i class="bi bi-trash"></i> Xóa
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle"></i> Không tìm thấy đánh giá nào.
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        border: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .btn-group-sm .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+</style>

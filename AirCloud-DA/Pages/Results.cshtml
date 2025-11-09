@@ -1,0 +1,69 @@
+@page
+@model AirCloud_DA.Pages.ResultsModel
+@{
+    ViewData["Title"] = "Kết quả tìm kiếm";
+}
+<div class="container-xxl py-3">
+    <h2 class="mb-1">Kết quả</h2>
+    <p class="text-muted mb-3">
+        @Model.From → @Model.To · @Model.Date:dd/MM/yyyy
+        @if (!string.IsNullOrWhiteSpace(Model.ReturnDate))
+        {
+            <span> · Khứ hồi: @Model.ReturnDate</span>
+        }
+        · @Model.Passengers hành khách · @Model.CabinClass
+    </p>
+
+    @if (Model.Flights.Count == 0)
+    {
+        <div class="alert alert-warning">Không tìm thấy chuyến bay phù hợp.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Hãng</th>
+                        <th>Mã chuyến</th>
+                        <th>Từ</th>
+                        <th>Đến</th>
+                        <th>Khởi hành</th>
+                        <th>Hạ cánh</th>
+                        <th>Thời lượng</th>
+                        <th class="text-end">Giá</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var f in Model.Flights)
+                    {
+                        <tr>
+                            <td>@f.Airline</td>
+                            <td>@f.FlightNumber</td>
+                            <td>@f.FromAirport</td>
+                            <td>@f.ToAirport</td>
+                            <td>@f.DepartureTime:HH:mm dd/MM</td>
+                            <td>@f.ArrivalTime:HH:mm dd/MM</td>
+                            <td>@f.Duration</td>
+                            <td class="text-end">@f.Price.ToString("C0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
+                            <td class="text-end">
+                                <a class="btn btn-sm btn-primary"
+                                   asp-page="/Booking"
+                                   asp-route-id="@f.FlightInstanceId"
+                                   asp-route-from="@Model.From"
+                                   asp-route-to="@Model.To"
+                                   asp-route-date="@Model.Date.ToString("yyyy-MM-dd")"
+                                   asp-route-passengers="@Model.Passengers"
+                                   asp-route-cabinClass="@Model.CabinClass">
+                                    Chọn
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+

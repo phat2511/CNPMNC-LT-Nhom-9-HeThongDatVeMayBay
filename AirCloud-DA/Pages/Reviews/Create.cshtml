@@ -1,0 +1,325 @@
+﻿@page
+@model AirCloud_DA.Pages.Reviews.CreateModel
+@{
+    ViewData["Title"] = "Viết đánh giá";
+}
+
+<div class="container-xxl py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Viết đánh giá dịch vụ</h2>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+            }
+
+            <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+
+            <form method="post" id="reviewForm">
+                <input type="hidden" asp-for="Rating" id="ratingHidden" value="0" />
+
+                <div class="mb-3">
+                    <label class="form-label">Đánh giá của bạn <span class="text-danger">*</span></label>
+
+                    <div class="rating-wrapper mb-2">
+                        @* ĐỔI: Render từ 1 đến 5 (sao 1 trái, sao 5 phải) *@
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <input type="radio"
+                                   id="star@i"
+                                   name="Rating"
+                                   value="@i"
+                                   class="rating-input"
+                                   data-rating="@i"
+                                   @(Model.Rating == i ? "checked" : "") />
+                            <label for="star@i" class="rating-star" data-rating="@i">
+                                <i class="bi bi-star-fill"></i>
+                            </label>
+                        }
+                    </div>
+                    <span asp-validation-for="Rating" class="text-danger"></span>
+                    <div id="ratingValue" class="text-muted small mt-1"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Subject" class="form-label">Tiêu đề <span class="text-danger">*</span></label>
+                    <input asp-for="Input.Subject" class="form-control" placeholder="VD: Dịch vụ tuyệt vời!" />
+                    <span asp-validation-for="Input.Subject" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Input.Content" class="form-label">Nội dung đánh giá <span class="text-danger">*</span></label>
+                    <textarea asp-for="Input.Content" class="form-control" rows="5"
+                              placeholder="Chia sẻ trải nghiệm của bạn về dịch vụ..."></textarea>
+                    <span asp-validation-for="Input.Content" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+                    <a asp-page="Index" class="btn btn-outline-secondary">Hủy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .rating-wrapper {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .rating-input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    .rating-star {
+        font-size: 2.5rem;
+        color: #ddd;
+        cursor: pointer;
+        transition: color 0.2s, transform 0.1s;
+        display: inline-block;
+        line-height: 1;
+        user-select: none;
+        margin: 0;
+    }
+
+    .rating-star:hover {
+        transform: scale(1.15);
+    }
+
+    .rating-star i {
+        display: block;
+        pointer-events: none;
+        color: inherit;
+    }
+
+    .rating-star {
+        color: #ddd !important;
+    }
+
+    .rating-star.active {
+        color: #ffc107 !important;
+    }
+
+    .rating-star.active i {
+        color: #ffc107 !important;
+    }
+
+    .rating-star.hover {
+        color: #ffc107 !important;
+    }
+
+    .rating-star.hover i {
+        color: #ffc107 !important;
+    }
+
+    .rating-star:hover {
+        color: #ffc107 !important;
+    }
+
+    .rating-star:hover i {
+        color: #ffc107 !important;
+    }
+</style>
+
+<script>
+    (function() {
+        'use strict';
+
+        function initRating() {
+            var wrapper = document.querySelector('.rating-wrapper');
+            if (!wrapper) {
+                console.log('Rating wrapper not found');
+                return;
+            }
+
+            var stars = wrapper.querySelectorAll('.rating-star');
+            var inputs = wrapper.querySelectorAll('.rating-input');
+            var ratingValue = document.getElementById('ratingValue');
+            var ratingHidden = document.getElementById('ratingHidden');
+            var form = document.getElementById('reviewForm');
+
+            console.log('Found stars:', stars.length);
+            console.log('Found inputs:', inputs.length);
+
+            // Hàm cập nhật màu sao
+            // Vì render từ 1 đến 5, logic đơn giản hơn: highlight từ sao 1 đến sao được chọn
+            function updateStars(selectedRating) {
+                if (!selectedRating || selectedRating < 1) selectedRating = 0;
+
+                console.log('Updating stars for rating:', selectedRating);
+
+                // Reset tất cả về màu xám
+                stars.forEach(function(star) {
+                    star.classList.remove('active', 'hover');
+                    star.style.color = '#ddd';
+                    var icon = star.querySelector('i');
+                    if (icon) {
+                        icon.style.color = '#ddd';
+                    }
+                });
+
+                if (selectedRating > 0) {
+                    // Vì render từ 1 đến 5:
+                    // - Sao 1 (đầu tiên) có data-rating="1"
+                    // - Sao 5 (cuối cùng) có data-rating="5"
+                    // Logic: highlight các sao có starRating <= selectedRating
+                    // Ví dụ: chọn rating = 1 → highlight sao 1 (1 sao)
+                    //        chọn rating = 3 → highlight sao 1, 2, 3 (3 sao)
+                    //        chọn rating = 5 → highlight tất cả 5 sao
+
+                    stars.forEach(function(star) {
+                        var starRating = parseInt(star.getAttribute('data-rating'));
+
+                        // Logic đơn giản: highlight từ sao 1 đến sao được chọn
+                        if (starRating <= selectedRating) {
+                            star.classList.add('active');
+                            star.style.color = '#ffc107';
+                            var icon = star.querySelector('i');
+                            if (icon) {
+                                icon.style.color = '#ffc107';
+                            }
+                            console.log('Activated star:', starRating, 'for selected rating:', selectedRating);
+                        }
+                    });
+                }
+
+                if (ratingValue) {
+                    ratingValue.textContent = selectedRating > 0 ? 'Đã chọn: ' + selectedRating + ' sao' : '';
+                }
+
+                if (ratingHidden) {
+                    ratingHidden.value = selectedRating;
+                }
+            }
+
+            // Hàm tìm input theo rating
+            function findInputByRating(rating) {
+                var input = wrapper.querySelector('.rating-input[data-rating="' + rating + '"]');
+                if (input) return input;
+                input = wrapper.querySelector('.rating-input[value="' + rating + '"]');
+                if (input) return input;
+                input = document.getElementById('star' + rating);
+                return input;
+            }
+
+            // Xử lý click vào sao
+            stars.forEach(function(star) {
+                star.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    var rating = parseInt(this.getAttribute('data-rating'));
+                    var input = findInputByRating(rating);
+
+                    console.log('Star clicked, rating:', rating);
+                    console.log('Input found:', input);
+
+                    if (input) {
+                        inputs.forEach(function(inp) {
+                            inp.checked = false;
+                        });
+
+                        input.checked = true;
+                        console.log('Input checked:', input.checked);
+                        console.log('Input value:', input.value);
+
+                        if (ratingHidden) {
+                            ratingHidden.value = rating;
+                        }
+
+                        var changeEvent = new Event('change', { bubbles: true });
+                        input.dispatchEvent(changeEvent);
+
+                        // Cập nhật visual với rating đã chọn
+                        updateStars(rating);
+
+                        wrapper.offsetHeight;
+
+                        console.log('Rating selected:', rating);
+                        console.log('Hidden field value:', ratingHidden ? ratingHidden.value : 'N/A');
+                    }
+                });
+
+                // Hover effect
+                star.addEventListener('mouseenter', function() {
+                    var hoverRating = parseInt(this.getAttribute('data-rating'));
+
+                    stars.forEach(function(s) {
+                        var sRating = parseInt(s.getAttribute('data-rating'));
+                        s.classList.remove('hover');
+                        // Highlight từ sao 1 đến sao đang hover
+                        if (sRating <= hoverRating) {
+                            s.classList.add('hover');
+                        }
+                    });
+                });
+            });
+
+            // Khi submit form
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    var checkedInput = wrapper.querySelector('.rating-input:checked');
+                    if (!checkedInput) {
+                        e.preventDefault();
+                        alert('Vui lòng chọn số sao đánh giá!');
+                        return false;
+                    }
+                    var rating = parseInt(checkedInput.value);
+                    console.log('Form submitting with rating:', rating);
+                    if (ratingHidden) {
+                        ratingHidden.value = rating;
+                    }
+                });
+            }
+
+            // Khi mouse leave
+            wrapper.addEventListener('mouseleave', function() {
+                stars.forEach(function(star) {
+                    star.classList.remove('hover');
+                });
+                var checkedInput = wrapper.querySelector('.rating-input:checked');
+                if (checkedInput) {
+                    var rating = parseInt(checkedInput.value);
+                    updateStars(rating);
+                } else {
+                    updateStars(0);
+                }
+            });
+
+            // Khởi tạo
+            var checkedInput = wrapper.querySelector('.rating-input:checked');
+            if (checkedInput) {
+                var rating = parseInt(checkedInput.value);
+                updateStars(rating);
+            } else if (@Model.Rating > 0) {
+                updateStars(@Model.Rating);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initRating);
+        } else {
+            setTimeout(initRating, 50);
+        }
+
+        if (typeof jQuery !== 'undefined') {
+            jQuery(document).ready(function($) {
+                setTimeout(initRating, 100);
+            });
+        }
+    })();
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

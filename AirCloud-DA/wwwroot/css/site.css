@@ -1,0 +1,492 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* ===== Theme Variables (Aurora Purple) ===== */
+:root {
+    --ac-primary: #6C63FF;
+    --ac-primary-2: #5A4FCF;
+    --ac-bg: #f5f6fa;
+    --ac-text: #333333;
+    --ac-muted: #6c757d;
+    --ac-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    --ac-radius: 12px;
+}
+/* ===== SKYFLY THEME ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f6fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Spacing Utilities (Global) ===== */
+.--section {
+    padding-block: 1.5rem;
+}
+
+.--section-lg {
+    padding-block: 2rem;
+}
+
+.--heading {
+    margin-bottom: 1rem;
+}
+
+.--toolbar {
+    margin-bottom: 1rem;
+}
+
+.--table-wrap {
+    margin-top: 1rem;
+}
+
+/* Hero section */
+.sky-hero {
+    background: linear-gradient(135deg, #6C63FF 0%, #5A4FCF 100%);
+    color: white;
+    padding: 80px 0 120px;
+    text-align: center;
+    position: relative;
+}
+
+.sky-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Tabs */
+.sky-app-tabs {
+    justify-content: center;
+}
+
+.btn-sky-tab {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+    .btn-sky-tab.active,
+    .btn-sky-tab:hover {
+        background: #fff;
+        color: #5A4FCF;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+/* Toolbar & search form */
+.sky-toolbar {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.sky-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    align-items: end;
+}
+
+.sky-field {
+    position: relative;
+}
+
+.sky-label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.sky-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    height: 45px;
+    padding: 0 12px;
+}
+
+.sky-swap {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    border: none;
+    background: transparent;
+    color: #6C63FF;
+    cursor: pointer;
+}
+
+/* Divider */
+.sky-divider {
+    width: 1px;
+    height: 40px;
+    background: #eee;
+    margin: auto;
+}
+
+/* Action */
+.sky-action {
+    display: flex;
+    align-items: end;
+}
+
+.btn-sky-search {
+    background: #6C63FF;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+    .btn-sky-search:hover {
+        background: #5A4FCF;
+        box-shadow: 0 6px 15px rgba(108, 99, 255, 0.3);
+    }
+
+/* Options (checkbox) */
+.sky-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #555;
+}
+
+/* Deals Section */
+.deal-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .deal-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+.deal-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.deal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    padding: 20px;
+    color: white;
+}
+
+.deal-content {
+    padding: 20px;
+}
+
+.deal-price {
+    margin-top: 10px;
+    color: #6C63FF;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.airline-logo {
+    width: 38px;
+    height: 38px;
+    background: #6C63FF;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flight-type {
+    color: #888;
+    font-size: 0.9rem;
+}
+.sky-hero {
+    background: linear-gradient(135deg, #6a5acd, #7b68ee);
+    color: #fff;
+    padding: 80px 0 100px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+    .sky-hero .container-xxl {
+        max-width: 100%;
+        padding: 0;
+    }
+
+.sky-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.sky-app-tabs {
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.btn-sky-tab {
+    background-color: rgba(255,255,255,0.15);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 18px;
+    transition: 0.3s;
+}
+
+    .btn-sky-tab.active {
+        background-color: #fff !important;
+        color: #6a5acd !important;
+        font-weight: 600;
+    }
+
+.sky-toolbar {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+}
+
+.sky-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+}
+
+.sky-field {
+    flex: 1;
+    min-width: 180px;
+}
+
+.sky-control {
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+    .sky-control:focus {
+        border-color: #7b68ee;
+        box-shadow: 0 0 0 0.2rem rgba(123,104,238,0.25);
+    }
+
+.sky-swap {
+    position: absolute;
+    top: 45%;
+    right: -18px;
+    background: #7b68ee;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    transition: 0.3s;
+}
+
+    .sky-swap:hover {
+        background: #6a5acd;
+    }
+
+.btn-sky-search {
+    background: linear-gradient(135deg, #6a5acd, #7b68ee);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 100%;
+}
+
+    .btn-sky-search:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+
+.sky-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* ===== Rating Stars ===== */
+.rating-input {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.rating-input .star-label {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #dee2e6;
+    transition: color 0.2s ease;
+}
+
+.rating-input .star-label:hover,
+.rating-input input:checked ~ .star-label,
+.rating-input .star-label:hover ~ .star-label {
+    color: #ffc107 !important;
+}
+
+.rating-input input:checked ~ .star-label {
+    color: #ffc107 !important;
+}
+
+/* ===== Review Cards ===== */
+.review-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+
+/* ===== Admin Review Management ===== */
+.admin-review-actions {
+    min-width: 120px;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ===== Statistics Cards ===== */
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* ===== Progress Bars for Rating Distribution ===== */
+.rating-progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.rating-progress .progress-bar {
+    background: linear-gradient(90deg, #ffc107 0%, #ff8c00 100%);
+    border-radius: 4px;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* ===== Form Enhancements ===== */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--ac-primary);
+}
+
+/* ===== Button Groups ===== */
+.btn-group-filter .btn {
+    border-radius: 0.375rem !important;
+    margin-right: 0.25rem;
+}
+
+.btn-group-filter .btn:last-child {
+    margin-right: 0;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .rating-input .star-label {
+        font-size: 1.25rem;
+    }
+    
+    .admin-review-actions {
+        min-width: 100px;
+    }
+    
+    .btn-group-filter {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-group-filter .btn {
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+    }
+}
+

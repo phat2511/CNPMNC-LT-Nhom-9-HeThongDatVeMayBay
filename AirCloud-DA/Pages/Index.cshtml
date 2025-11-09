@@ -1,0 +1,404 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tìm vé máy bay";
+}
+@{
+    var bannerService = HttpContext.RequestServices.GetRequiredService<AirCloud_DA.Services.IBannerService>();
+    var banners = await bannerService.GetActiveBannersAsync();
+}
+@if (banners.Any())
+{
+    <section class="container-xxl py-3">
+        @await Html.PartialAsync("Components/BannerView", banners)
+    </section>
+}
+
+<section class="sky-hero">
+    <div class="container-xxl">
+        <h1 class="sky-title">Dễ dàng tìm hàng triệu vé giá rẻ tại cùng một nơi.</h1>
+
+        <div class="sky-toolbar">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <div class="dropdown">
+                    <button class="btn btn-sky-chip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Khứ hồi
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" type="button" id="trip-rt">Khứ hồi</button></li>
+                        <li><button class="dropdown-item" type="button" id="trip-ow">Một chiều</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <form method="get" asp-page="/Results">
+                <div class="sky-inputs">
+                    <div class="sky-field">
+                        <label class="sky-label">Từ</label>
+                        <input id="from" name="From" class="form-control sky-control" placeholder="Quốc gia, thành phố hoặc sân bay" required />
+                        <button class="sky-swap" type="button" id="swapBtn" aria-label="Đổi chiều"><i class="bi bi-arrow-left-right"></i></button>
+                    </div>
+
+                    <div class="sky-divider"></div>
+
+                    <div class="sky-field">
+                        <label class="sky-label">Đến</label>
+                        <input id="to" name="To" class="form-control sky-control" placeholder="Quốc gia, thành phố hoặc sân bay" required />
+                    </div>
+
+                    <div class="sky-divider d-none d-md-block"></div>
+
+                    <div class="sky-field">
+                        <label class="sky-label">Ngày đi</label>
+                        <input type="date" id="departDate" name="Date" class="form-control sky-control" required />
+                    </div>
+
+                    <div class="sky-divider d-none d-md-block"></div>
+
+                    <div class="sky-field">
+                        <label class="sky-label">Khứ hồi</label>
+                        <input type="date" id="returnDate" class="form-control sky-control" disabled />
+                        <input type="hidden" id="returnDateName" name="ReturnDate" />
+                    </div>
+
+                    <div class="sky-divider d-none d-xl-block"></div>
+
+                    <div class="sky-field">
+                        <label class="sky-label">Du khách & hạng</label>
+                        <select id="passengers" name="Passengers" class="form-select sky-control">
+                            <option value="1" selected>1 người lớn</option>
+                            <option value="2">2 người lớn</option>
+                            <option value="3">3 người lớn</option>
+                            <option value="4">4 người lớn</option>
+                        </select>
+                        <select id="cabinClass" name="CabinClass" class="form-select sky-control mt-2">
+                            <option value="Economy" selected>Phổ thông</option>
+                            <option value="PremiumEconomy">Phổ thông đặc biệt</option>
+                            <option value="Business">Thương gia</option>
+                            <option value="First">Hạng nhất</option>
+                        </select>
+                    </div>
+
+                    <div class="sky-action">
+                        <button type="submit" class="btn btn-sky-search">
+                            <i class="bi bi-search me-1"></i> Tìm kiếm
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sky-options mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="nearFrom">
+                        <label class="form-check-label" for="nearFrom">Thêm các sân bay gần đây</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="nearTo">
+                        <label class="form-check-label" for="nearTo">Thêm các sân bay gần đây</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="directOnly">
+                        <label class="form-check-label" for="directOnly">Chuyến bay thẳng</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="container-xxl py-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-2">Vé máy bay giá rẻ khi khởi hành từ Việt Nam</h2>
+            <p class="text-muted mb-4">Sau đây là các vé máy bay giá rẻ có mức giá thấp nhất. Hãy nhanh tay lên – tất cả những chuyến bay này đều khởi hành trong vòng 3 tháng tới.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Phú Quốc -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Phú Quốc</h4>
+                            <p class="mb-0 small">Việt Nam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 7, 8 thg 11</div>
+                                    <div class="flight-route">SGN - PQC với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 3, 11 thg 11</div>
+                                    <div class="flight-route">PQC - SGN với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 1.279.787 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kuala Lumpur -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Kuala Lumpur</h4>
+                            <p class="mb-0 small">Malaysia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 3, 4 thg 11</div>
+                                    <div class="flight-route">SGN – KUL với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 5, 20 thg 11</div>
+                                    <div class="flight-route">KUL - SGN với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 2.082.923 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quảng Châu -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Quảng Châu</h4>
+                            <p class="mb-0 small">Trung Quốc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2" style="background: #00a651;">9C</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 6, 28 thg 11</div>
+                                    <div class="flight-route">SGN - CAN với Spring Airlines</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2" style="background: #00a651;">9C</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 2, 1 thg 12</div>
+                                    <div class="flight-route">CAN – SGN với Spring Airlines</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 2.618.655 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thêm các đích đến khác -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Bangkok</h4>
+                            <p class="mb-0 small">Thái Lan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 4, 12 thg 11</div>
+                                    <div class="flight-route">SGN - BKK với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 6, 14 thg 11</div>
+                                    <div class="flight-route">BKK - SGN với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 1.890.000 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Singapore</h4>
+                            <p class="mb-0 small">Singapore</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 7, 15 thg 11</div>
+                                    <div class="flight-route">SGN - SIN với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2">VJ</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 2, 18 thg 11</div>
+                                    <div class="flight-route">SIN - SGN với VietJet Air</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 2.450.000 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+</div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="deal-card">
+                <div class="deal-image" style="background-image: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <div class="deal-overlay">
+                        <div class="deal-destination">
+                            <h4 class="mb-1">Tokyo</h4>
+                            <p class="mb-0 small">Nhật Bản</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-content">
+                    <div class="deal-flights">
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="airline-logo me-2">VN</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 3, 19 thg 11</div>
+                                    <div class="flight-route">SGN - NRT với Vietnam Airlines</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <div class="d-flex align-items-center">
+                                <div class="airline-logo me-2">VN</div>
+                                <div class="flight-details">
+                                    <div class="flight-date">Th 5, 21 thg 11</div>
+                                    <div class="flight-route">NRT - SGN với Vietnam Airlines</div>
+                                    <div class="flight-type">Bay thẳng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-price">
+                        <span class="price">từ 4.200.000 ₫</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-xxl py-4">
+    <!-- bạn có thể đặt banner/khám phá tiếp ở đây -->
+</section>
+
+@section Scripts {
+    <script>
+        (function () {
+            const tripRt = document.getElementById('trip-rt');
+            const tripOw = document.getElementById('trip-ow');
+            const returnDate = document.getElementById('returnDate');
+            const returnDateName = document.getElementById('returnDateName');
+            const departDate = document.getElementById('departDate');
+            const swapBtn = document.getElementById('swapBtn');
+            const from = document.getElementById('from');
+            const to = document.getElementById('to');
+
+            const today = new Date().toISOString().split('T')[0];
+            departDate.value = today;
+            departDate.min = today;
+            returnDate.min = today;
+
+            function enableRoundTrip(on) {
+                returnDate.disabled = !on;
+                if (!on) { returnDate.value = ''; returnDateName.value = ''; }
+            }
+            tripRt?.addEventListener('click', () => enableRoundTrip(true));
+            tripOw?.addEventListener('click', () => enableRoundTrip(false));
+            enableRoundTrip(true);
+
+            returnDate.addEventListener('change', () => { returnDateName.value = returnDate.value || ''; });
+
+            swapBtn.addEventListener('click', () => {
+                const tmp = from.value; from.value = to.value; to.value = tmp; from.focus();
+            });
+        })();
+    </script>
+}

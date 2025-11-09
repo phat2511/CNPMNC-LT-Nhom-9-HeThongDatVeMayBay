@@ -1,0 +1,169 @@
+﻿@page
+@model AirCloud_DA.Pages.Reviews.IndexModel
+@{
+    ViewData["Title"] = "Đánh giá dịch vụ";
+}
+
+<div class="container-xxl py-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">Đánh giá dịch vụ</h2>
+
+            @if (Model.Reviews.Any())
+            {
+                <div class="row g-4">
+                    @foreach (var review in Model.Reviews)
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="me-2">
+                                            @{
+                                                int reviewRating = 0;
+                                                string displaySubject = review.Subject ?? "";
+                                                string debugInfo = "";
+
+                                                // Hàm parse rating từ Content
+                                                int ParseRatingFromContent(string? content)
+                                                {
+                                                    if (string.IsNullOrEmpty(content)) return 0;
+
+                                                    // Pattern: [Đánh giá: X/5 sao]
+                                                    var match = System.Text.RegularExpressions.Regex.Match(
+                                                    content,
+                                                    @"\[Đánh giá:\s*(\d+)/5\s*sao\]",
+                                                    System.Text.RegularExpressions.RegexOptions.IgnoreCase
+                                                    );
+
+                                                    if (match.Success && match.Groups.Count > 1)
+                                                    {
+                                                        if (int.TryParse(match.Groups[1].Value, out int rating))
+                                                        {
+                                                            return rating >= 1 && rating <= 5 ? rating : 0;
+                                                        }
+                                                    }
+                                                    return 0;
+                                                }
+
+                                                // Hàm parse rating từ Subject
+                                                int ParseRatingFromSubject(string? subject)
+                                                {
+                                                    if (string.IsNullOrEmpty(subject)) return 0;
+
+                                                    // Pattern: "Đánh giá X sao"
+                                                    var match = System.Text.RegularExpressions.Regex.Match(
+                                                    subject,
+                                                    @"Đánh giá\s+(\d+)\s+sao",
+                                                    System.Text.RegularExpressions.RegexOptions.IgnoreCase
+                                                    );
+
+                                                    if (match.Success && match.Groups.Count > 1)
+                                                    {
+                                                        if (int.TryParse(match.Groups[1].Value, out int rating))
+                                                        {
+                                                            return rating >= 1 && rating <= 5 ? rating : 0;
+                                                        }
+                                                    }
+                                                    return 0;
+                                                }
+
+                                                // Ưu tiên 1: Parse từ Content
+                                                reviewRating = ParseRatingFromContent(review.Content);
+                                                if (reviewRating > 0)
+                                                {
+                                                    debugInfo = $"From Content: {reviewRating}";
+                                                }
+                                                else
+                                                {
+                                                    // Ưu tiên 2: Parse từ Subject
+                                                    reviewRating = ParseRatingFromSubject(review.Subject);
+                                                    if (reviewRating > 0)
+                                                    {
+                                                        debugInfo = $"From Subject: {reviewRating}";
+                                                    }
+                                                }
+
+                                                // Loại bỏ tiền tố "Đánh giá X sao - " khỏi Subject
+                                                if (!string.IsNullOrEmpty(displaySubject))
+                                                {
+                                                    var prefixMatch = System.Text.RegularExpressions.Regex.Match(
+                                                    displaySubject,
+                                                    @"^Đánh giá\s+\d+\s+sao\s*-\s*",
+                                                    System.Text.RegularExpressions.RegexOptions.IgnoreCase
+                                                    );
+                                                    if (prefixMatch.Success)
+                                                    {
+                                                        displaySubject = displaySubject.Substring(prefixMatch.Length).Trim();
+                                                    }
+                                                }
+
+                                                // Nếu vẫn không parse được, thử tìm số đầu tiên (fallback)
+                                                if (reviewRating == 0 && !string.IsNullOrEmpty(review.Subject))
+                                                {
+                                                    var fallbackMatch = System.Text.RegularExpressions.Regex.Match(review.Subject, @"\b([1-5])\b");
+                                                    if (fallbackMatch.Success && int.TryParse(fallbackMatch.Value, out int fallbackRating))
+                                                    {
+                                                        reviewRating = fallbackRating;
+                                                        debugInfo = $"Fallback: {reviewRating}";
+                                                    }
+                                                }
+
+                                                // Debug output (có thể xóa sau khi test)
+                                                // debugInfo sẽ chứa thông tin về cách parse được rating
+                                            }
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="bi bi-star-fill @(i <= reviewRating ? "text-warning" : "text-muted")"></i>
+                                            }
+                                        </div>
+                                        <small class="text-muted">@review.CreatedAt?.ToString("dd/MM/yyyy")</small>
+                                    </div>
+
+                                    <h6 class="card-title">@displaySubject</h6>
+
+                                    @{
+                                        string displayContent = review.Content ?? "";
+                                        // Loại bỏ phần [Đánh giá: X/5 sao] và các ký tự xuống dòng
+                                        if (!string.IsNullOrEmpty(displayContent))
+                                        {
+                                            var contentPrefixMatch = System.Text.RegularExpressions.Regex.Match(
+                                            displayContent,
+                                            @"^\[Đánh giá:\s*\d+/5\s*sao\]\s*[\r\n]+",
+                                            System.Text.RegularExpressions.RegexOptions.IgnoreCase |
+                                            System.Text.RegularExpressions.RegexOptions.Multiline
+                                            );
+                                            if (contentPrefixMatch.Success)
+                                            {
+                                                displayContent = displayContent.Substring(contentPrefixMatch.Length).Trim();
+                                            }
+                                        }
+                                    }
+                                    <p class="card-text">@displayContent</p>
+                                    <small class="text-muted">- @(review.Account?.FullName ?? "Khách hàng")</small>
+
+                                    @* Debug info - xóa dòng này sau khi test xong *@
+                                    @* <small class="text-danger">Debug: @debugInfo, Rating: @reviewRating</small> *@
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="bi bi-chat-square-heart display-1 text-muted"></i>
+                    <h4 class="mt-3">Chưa có đánh giá nào</h4>
+                    <p class="text-muted">Hãy là người đầu tiên đánh giá dịch vụ của chúng tôi!</p>
+                </div>
+            }
+
+            <div class="text-center mt-4">
+                <a asp-page="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle me-1"></i>Viết đánh giá
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
